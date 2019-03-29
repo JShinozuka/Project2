@@ -2,10 +2,12 @@
 #define MANAGERMEMBERSHIP_H
 
 #include <QWidget>
+#include <QSqlDatabase>
 
 namespace Ui {
 class managerMembership;
 }
+
 
 class managerMembership : public QWidget
 {
@@ -17,6 +19,8 @@ public:
 
 private:
     Ui::managerMembership *ui;
+    QSqlDatabase db;
+
 };
 
 #endif // MANAGERMEMBERSHIP_H

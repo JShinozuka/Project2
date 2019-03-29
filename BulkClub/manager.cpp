@@ -11,11 +11,13 @@ manager::manager(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &managerMembershipWindow);
     ui->stackedWidget->insertWidget(2, &managerSalesWindow);
     ui->stackedWidget->insertWidget(3, &managerInventoryWindow);
+
+    connectToDB();
 }
 
 manager::~manager()
 {
-    delete ui;
+    delete ui;  
 }
 
 /****************************************************************************
@@ -49,7 +51,7 @@ void manager::on_homeButton_clicked()
  ***************************************************************************/
 void manager::on_membershipButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(1);    
 }
 
 /****************************************************************************
@@ -100,7 +102,33 @@ void manager::on_inventoryButton_clicked()
  ***************************************************************************/
 void manager::on_logoutButton_clicked()
 {
+    if(database.open())
+    {
+        closeDB();
+    }
     this->close();
+}
+
+bool manager::connectToDB()
+{
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("BulkClubDB.db");
+
+    if(!database.open())
+    {
+        qDebug() << "Database could not be opened";
+        return false;
+    }
+
+    qDebug() << "Database opened";
+    return true;
+}
+
+void manager::closeDB()
+{
+    database.close();
+    database.removeDatabase(QSqlDatabase::defaultConnection);
+    qDebug() << ("Database closed");
 }
 
 

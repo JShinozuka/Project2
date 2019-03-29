@@ -5,6 +5,8 @@
 #include "managermembership.h"
 #include "managersales.h"
 #include "managerinventory.h"
+#include <QtSql>
+
 
 namespace Ui {
 class manager;
@@ -16,6 +18,7 @@ class manager : public QWidget
 
 public:
     explicit manager(QWidget *parent = nullptr);
+
     ~manager();
 
 private slots:
@@ -46,6 +49,10 @@ private:
     managerMembership managerMembershipWindow;
     managerSales managerSalesWindow;
     managerInventory managerInventoryWindow;
+    QSqlDatabase database; // = QSqlDatabase::addDatabase("SQLITE");
+    bool connectToDB();
+    void closeDB();
+
 };
 
 #endif // MANAGER_H
