@@ -34,7 +34,8 @@ SOURCES += \
     managerinventory.cpp \
     adminsales.cpp \
     admininventory.cpp \
-    adminmembership.cpp
+    adminmembership.cpp \
+    databasemanger.cpp
 
 HEADERS += \
     admin.h \
@@ -45,7 +46,8 @@ HEADERS += \
     managerinventory.h \
     adminsales.h \
     admininventory.h \
-    adminmembership.h
+    adminmembership.h \
+    databasemanger.h
 
 FORMS += \
     admin.ui \

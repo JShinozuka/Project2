@@ -2,11 +2,10 @@
 #define MANAGER_H
 
 #include <QWidget>
+
 #include "managermembership.h"
 #include "managersales.h"
 #include "managerinventory.h"
-#include <QtSql>
-
 
 namespace Ui {
 class manager;
@@ -18,41 +17,36 @@ class manager : public QWidget
 
 public:
     explicit manager(QWidget *parent = nullptr);
-
     ~manager();
 
 private slots:
 
     void on_homeButton_clicked();
-    //!< Brief Description
+    //!< Home page is displayed in stackedWidget
     /*!< POSTCONDITONS:  */
 
     void on_membershipButton_clicked();
-    //!< Brief Description
+    //!< Membership page is displayed in stackedWidget
     /*!< POSTCONDITONS:  */
 
     void on_salesButton_clicked();
-    //!< Brief Description
+    //!< Sales page is displayed in stackedWidget
     /*!< POSTCONDITONS:  */
 
     void on_inventoryButton_clicked();
-    //!< Brief Description
+    //!< Inventory page is displayed in stackedWidget
     /*!< POSTCONDITONS:  */
 
     void on_logoutButton_clicked();
-    //!< Brief Description
+    //!< Manager window closes
     /*!< POSTCONDITONS:  */
 
 private:
     Ui::manager *ui;
 
-    managerMembership managerMembershipWindow;
-    managerSales managerSalesWindow;
-    managerInventory managerInventoryWindow;
-    QSqlDatabase database; // = QSqlDatabase::addDatabase("SQLITE");
-    bool connectToDB();
-    void closeDB();
-
+    managerMembership managerMembershipWindow; // Membership window object
+    managerSales      managerSalesWindow;      // Sales window object
+    managerInventory  managerInventoryWindow;  // Inventory window object
 };
 
 #endif // MANAGER_H

@@ -1,6 +1,12 @@
+
+////////////////////////////// DOCUMENTATION STILL NEEDED
+
 #include "managermembership.h"
 #include "ui_managermembership.h"
-#include "manager.h"
+
+#include <QSqlQueryModel>
+#include <QSqlQuery>
+#include <QDebug>
 
 managerMembership::managerMembership(QWidget *parent) :
     QWidget(parent),
@@ -8,18 +14,17 @@ managerMembership::managerMembership(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    db = QSqlDatabase::database();
-
-    QSqlQueryModel * modal = new QSqlQueryModel();
-    QSqlQuery * qry = new QSqlQuery(db);
+    myDB = QSqlDatabase::database();
+    QSqlQuery * qry = new QSqlQuery(myDB);
 
     qry->prepare("SELECT * "
                  "FROM MembershipDB"); //From Table
     qry->exec();
+
+    QSqlQueryModel * modal = new QSqlQueryModel();
     modal->setQuery(*qry);
 
     ui->memberDBTable->setModel(modal);
-
 }
 
 managerMembership::~managerMembership()

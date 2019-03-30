@@ -1,6 +1,9 @@
 #include "manager.h"
 #include "ui_manager.h"
 
+#include <QDebug>
+
+// Default Constructor
 manager::manager(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::manager)
@@ -11,10 +14,9 @@ manager::manager(QWidget *parent) :
     ui->stackedWidget->insertWidget(1, &managerMembershipWindow);
     ui->stackedWidget->insertWidget(2, &managerSalesWindow);
     ui->stackedWidget->insertWidget(3, &managerInventoryWindow);
-
-    connectToDB();
 }
 
+// Destructor
 manager::~manager()
 {
     delete ui;  
@@ -23,7 +25,8 @@ manager::~manager()
 /****************************************************************************
  * METHOD - on_homeButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the home button is clicked, the stackedWidget index changes to
+ * display the home page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -40,7 +43,8 @@ void manager::on_homeButton_clicked()
 /****************************************************************************
  * METHOD - on_membershipButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the membership button is clicked, the stackedWidget index changes to
+ * display the membership page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -57,7 +61,8 @@ void manager::on_membershipButton_clicked()
 /****************************************************************************
  * METHOD - on_salesButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the sales button is clicked, the stackedWidget index changes to
+ * display the sales page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -74,7 +79,8 @@ void manager::on_salesButton_clicked()
 /****************************************************************************
  * METHOD - on_inventoryButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the inventory button is clicked, the stackedWidget index changes to
+ * display the inventory page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -91,7 +97,7 @@ void manager::on_inventoryButton_clicked()
 /****************************************************************************
  * METHOD - on_logoutButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the logout button is clicked, manager window closes.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -102,33 +108,7 @@ void manager::on_inventoryButton_clicked()
  ***************************************************************************/
 void manager::on_logoutButton_clicked()
 {
-    if(database.open())
-    {
-        closeDB();
-    }
     this->close();
-}
-
-bool manager::connectToDB()
-{
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("BulkClubDB.db");
-
-    if(!database.open())
-    {
-        qDebug() << "Database could not be opened";
-        return false;
-    }
-
-    qDebug() << "Database opened";
-    return true;
-}
-
-void manager::closeDB()
-{
-    database.close();
-    database.removeDatabase(QSqlDatabase::defaultConnection);
-    qDebug() << ("Database closed");
 }
 
 

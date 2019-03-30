@@ -1,6 +1,14 @@
+
+////////////////////////////    NEEDS DOCUMENTATION STILL
+
 #include "login.h"
 #include "ui_login.h"
+#include "databasemanger.h"
+//#include "bulkClubDB.h"
 
+#include <QDebug>
+
+// Default Constructor
 login::login(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::login)
@@ -8,9 +16,36 @@ login::login(QWidget *parent) :
     ui->setupUi(this);
 }
 
+// Destructor
 login::~login()
 {
     delete ui;
+}
+
+/****************************************************************************
+ * METHOD - connectToDB
+ * --------------------------------------------------------------------------
+ * This method ...
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Creates and connects to SQLite database
+ ***************************************************************************/
+void login::connectToDB()
+{
+    bool isOpen = false; // CALC - Set database open status to false
+
+    // Create and open a database connection
+    // Return if database opened successfully or not
+    isOpen = myDB.openDB();
+
+    if(isOpen)
+    {
+        qDebug() << "Success: Able to access open database";
+    }
 }
 
 /****************************************************************************
@@ -30,8 +65,7 @@ void login::on_loginManagerButton_clicked()
 // NEED CODE TO CHECK USERNAME AND PASSWORD
 // IMPLEMENT LATER
 
-    // Hide current window
-//    this->hide();
+    connectToDB();
 
     // Create new manager object named managerWindow and show
     managerWindow = new manager();
@@ -55,8 +89,7 @@ void login::on_loginAdminButton_clicked()
 // NEED CODE TO CHECK USERNAME AND PASSWORD
 // IMPLEMENT LATER
 
-    // Hide current window
-//    this->hide();
+    connectToDB();
 
     // Create new admin object named adminWindow and show
     adminWindow = new admin();
@@ -74,8 +107,10 @@ void login::on_loginAdminButton_clicked()
  * POST-CONDITIONS
  *      ==> Returns nothing.
  *      ==> Closes Login Window (closes entire program)
+ *      ==> Closes database connection
  ***************************************************************************/
 void login::on_exitProgramButton_clicked()
 {
+    myDB.closeDB();
     this->close();
 }
