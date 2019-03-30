@@ -1,6 +1,7 @@
 #include "admin.h"
 #include "ui_admin.h"
 
+// Default Constructor
 admin::admin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::admin)
@@ -13,6 +14,7 @@ admin::admin(QWidget *parent) :
     ui->stackedWidget->insertWidget(3, &adminInventoryWindow);
 }
 
+// Destructor
 admin::~admin()
 {
     delete ui;
@@ -21,14 +23,15 @@ admin::~admin()
 /****************************************************************************
  * METHOD - on_homeButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the home button is clicked, the stackedWidget index changes to
+ * display the home page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
  *
  * POST-CONDITIONS
  *      ==> Returns nothing.
- *      ==> Displays Manager Window Home Page
+ *      ==> Displays Admin Window Home Page
  ***************************************************************************/
 void admin::on_homeButton_clicked()
 {
@@ -38,7 +41,8 @@ void admin::on_homeButton_clicked()
 /****************************************************************************
  * METHOD - on_membershipButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the membership button is clicked, the stackedWidget index changes to
+ * display the membership page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -55,7 +59,8 @@ void admin::on_membershipButton_clicked()
 /****************************************************************************
  * METHOD - on_salesButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the sales button is clicked, the stackedWidget index changes to
+ * display the sales page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -72,7 +77,8 @@ void admin::on_salesButton_clicked()
 /****************************************************************************
  * METHOD - on_inventoryButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the inventory button is clicked, the stackedWidget index changes to
+ * display the inventory page.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
@@ -89,7 +95,7 @@ void admin::on_inventoryButton_clicked()
 /****************************************************************************
  * METHOD - on_logoutButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * When the logout button is clicked, admin window closes.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.

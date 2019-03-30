@@ -1,8 +1,6 @@
 #include "manager.h"
 #include "ui_manager.h"
 
-#include <QDebug>
-
 // Default Constructor
 manager::manager(QWidget *parent) :
     QWidget(parent),

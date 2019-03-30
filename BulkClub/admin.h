@@ -2,6 +2,7 @@
 #define ADMIN_H
 
 #include <QWidget>
+
 #include "adminmembership.h"
 #include "adminsales.h"
 #include "admininventory.h"
@@ -21,31 +22,26 @@ public:
 private slots:
 
     void on_homeButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< Home page is displayed in stackedWidget
 
     void on_membershipButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< Membership page is displayed in stackedWidget
 
     void on_salesButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< Sales page is displayed in stackedWidget
 
     void on_inventoryButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< Inventory page is displayed in stackedWidget
 
     void on_logoutButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< Admin window closes
 
 private:
     Ui::admin *ui;
 
-    adminMembership adminMembershipWindow;
-    adminSales adminSalesWindow;
-    adminInventory adminInventoryWindow;
+    adminMembership adminMembershipWindow; // Membership window object
+    adminSales      adminSalesWindow;      // Sales window object
+    adminInventory  adminInventoryWindow;  // Inventory window object
 };
 
 #endif // ADMIN_H

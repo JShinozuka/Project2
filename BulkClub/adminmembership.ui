@@ -34,14 +34,24 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>200</y>
-     <width>431</width>
-     <height>221</height>
+     <x>90</x>
+     <y>510</y>
+     <width>481</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="text">
     <string>Admin Membership Widget</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="memberDBTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>1181</width>
+     <height>421</height>
+    </rect>
    </property>
   </widget>
  </widget>

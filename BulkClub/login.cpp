@@ -1,11 +1,5 @@
-
-////////////////////////////    NEEDS DOCUMENTATION STILL
-
 #include "login.h"
 #include "ui_login.h"
-#include "databasemanger.h"
-
-#include <QDebug>
 
 // Default Constructor
 login::login(QWidget *parent) :
@@ -24,14 +18,18 @@ login::~login()
 /****************************************************************************
  * METHOD - connectToDB
  * --------------------------------------------------------------------------
- * This method ...
+ * This method creates and opens a database connection and displays a
+ * qDebug message that the database access is open.  This method is used
+ * with a valid login (manager or admin).  If database is already
+ * connected and open, then only the qDebug message is displayed.
+ * NOTE: Use with valid login username/password only (manager or admin)
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
  *
  * POST-CONDITIONS
  *      ==> Returns nothing.
- *      ==> Creates and connects to SQLite database
+ *      ==> Creates and connects to SQLite database if not open
  ***************************************************************************/
 void login::connectToDB()
 {
@@ -41,6 +39,7 @@ void login::connectToDB()
     // Return if database opened successfully or not
     isOpen = myDB.openDB();
 
+    // Display message if database connection was successful
     if(isOpen)
     {
         qDebug() << "Success: Able to access open database";
@@ -50,23 +49,25 @@ void login::connectToDB()
 /****************************************************************************
  * METHOD - on_loginManagerButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * On valid username/password for manager, the manager window is opened.
+ * Connection to database is checked.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
  *
  * POST-CONDITIONS
  *      ==> Returns nothing.
- *      ==> Displays Manager Window
+ *      ==> Displays Manager Window on valid login/password
  ***************************************************************************/
 void login::on_loginManagerButton_clicked()
 {
 // NEED CODE TO CHECK USERNAME AND PASSWORD
-// IMPLEMENT LATER
 
+    // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
 
     // Create new manager object named managerWindow and show
+    // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     managerWindow = new manager();
     managerWindow->show();
 }
@@ -74,23 +75,25 @@ void login::on_loginManagerButton_clicked()
 /****************************************************************************
  * METHOD - on_loginAdminButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * On valid username/password for admin, the admin window is opened.
+ * Connection to database is checked.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
  *
  * POST-CONDITIONS
  *      ==> Returns nothing.
- *      ==> Displays Admin Window
+ *      ==> Displays Admin Window on valid login/password
  ***************************************************************************/
 void login::on_loginAdminButton_clicked()
 {
 // NEED CODE TO CHECK USERNAME AND PASSWORD
-// IMPLEMENT LATER
 
+    // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
 
     // Create new admin object named adminWindow and show
+    // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     adminWindow = new admin();
     adminWindow->show();
 }
@@ -98,15 +101,16 @@ void login::on_loginAdminButton_clicked()
 /****************************************************************************
  * METHOD - on_exitProgramButton_clicked
  * --------------------------------------------------------------------------
- * This method ...
+ * This method closes database and program when exit button is clicked
+ * on the login window.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      No parameters are required.
  *
  * POST-CONDITIONS
  *      ==> Returns nothing.
- *      ==> Closes Login Window (closes entire program)
  *      ==> Closes database connection
+ *      ==> Closes Login Window (closes program)
  ***************************************************************************/
 void login::on_exitProgramButton_clicked()
 {

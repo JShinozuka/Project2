@@ -1,10 +1,9 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
-///////////////////////// NEEDS DOCUMENTATION STILL
-
 #include <QDialog>
 #include <QStackedLayout>
+#include <QDebug>
 
 #include "admin.h"
 #include "manager.h"
@@ -23,30 +22,28 @@ public:
     ~login();
 
     void connectToDB();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< Creates and opens database connection if not open
 
 private slots:
 
     void on_loginManagerButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< On valid username/password for manager, open manager window
+    /*!< Checks if database is already open */
 
     void on_loginAdminButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< On valid username/password for admin, open admin window
+    /*!< Checks if database is already open */
 
     void on_exitProgramButton_clicked();
-    //!< Brief Description
-    /*!< POSTCONDITONS:  */
+    //!< Closes database and program when exit button is clicked
 
 private:
     Ui::login *ui;
 
-    manager *managerWindow; //
-    admin   *adminWindow;   //
+    manager *managerWindow; // Manager window object
+    admin   *adminWindow;   // Admin window object
 
-    databaseManger myDB;  //
+    databaseManger myDB;    // Database object for database connection
 };
 
 #endif // LOGIN_H
