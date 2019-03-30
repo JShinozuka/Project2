@@ -4,7 +4,6 @@
 #include "login.h"
 #include "ui_login.h"
 #include "databasemanger.h"
-//#include "bulkClubDB.h"
 
 #include <QDebug>
 
