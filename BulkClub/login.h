@@ -37,8 +37,20 @@ private slots:
     void on_exitProgramButton_clicked();
     //!< Closes database and program when exit button is clicked
 
+    void on_usernameLineEdit_textEdited(const QString &arg1);
+
+    void on_passwordLineEdit_textEdited(const QString &arg1);
+
+    void on_usernameLineEdit_textChanged(const QString &arg1);
+
+    void on_passwordLineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::login *ui;
+    QString managerPassword;
+    QString adminPassword;
+    QString adminUsername;
+    QString managerUsername;
 
     manager *managerWindow; // Manager window object
     admin   *adminWindow;   // Admin window object
