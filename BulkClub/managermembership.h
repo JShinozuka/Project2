@@ -35,6 +35,8 @@ private slots:
                and expiration date */
     /*!< Additional Notes: Ordered by expiration date */
 
+    void on_membershipExpirationTable_activated(const QModelIndex &index);
+
 private:
     Ui::managerMembership *ui;
 
