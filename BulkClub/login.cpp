@@ -61,21 +61,8 @@ void login::connectToDB()
  ***************************************************************************/
 void login::on_loginManagerButton_clicked()
 {
-//    //Creates a single manager username and password
-//    if(managerUsername == "manager" && managerPassword == "123")
-//    {
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        connectToDB();
+// NEED CODE TO CHECK USERNAME AND PASSWORD
 
-//        // Create new manager object named managerWindow and show
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        managerWindow = new manager();
-//        managerWindow->show();
-//    }
-//    else
-//    {
-//        qDebug() << "Unable to login as manager!";
-//    }
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
 
@@ -100,21 +87,7 @@ void login::on_loginManagerButton_clicked()
  ***************************************************************************/
 void login::on_loginAdminButton_clicked()
 {
-//    //Checks if the entered username/password is valid
-//    if(adminUsername == "admin" && adminPassword == "123")
-//    {
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        connectToDB();
-
-//        // Create new admin object named adminWindow and show
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        adminWindow = new admin();
-//        adminWindow->show();
-//    }
-//    else
-//    {
-//        qDebug() << "Unable to login as admin!";
-//    }
+// NEED CODE TO CHECK USERNAME AND PASSWORD
 
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
@@ -143,16 +116,4 @@ void login::on_exitProgramButton_clicked()
 {
     myDB.closeDB();
     this->close();
-}
-
-void login::on_usernameLineEdit_textChanged(const QString &arg1)
-{
-    adminUsername = arg1;
-    managerUsername = arg1;
-}
-
-void login::on_passwordLineEdit_textChanged(const QString &arg1)
-{
-    adminPassword = arg1;
-    managerPassword = arg1;
 }
