@@ -36,7 +36,6 @@ SOURCES += \
     admininventory.cpp \
     adminmembership.cpp \
     databasemanger.cpp \
-
     managermemberpurchases.cpp \
     managerrebateinfo.cpp
 

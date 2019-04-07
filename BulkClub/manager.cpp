@@ -111,14 +111,15 @@ void manager::on_logoutButton_clicked()
     this->close();
 }
 
-
-
-void manager::on_membershipPurchasesButton_clicked()
+void manager::on_memberPurchasesButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
+
 void manager::on_salesButton_2_clicked()
 
 {
     ui->stackedWidget->setCurrentIndex(5);
 }
+
+

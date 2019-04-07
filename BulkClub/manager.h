@@ -38,11 +38,14 @@ private slots:
     void on_logoutButton_clicked();
     //!< Manager window closes
 
-    void on_membershipPurchasesButton_clicked();
+    void on_memberPurchasesButton_clicked();
     //!< Membership Purchase page is displayed in stacked Widget
 
     void on_salesButton_2_clicked();
       //!< Rebate page is displayed in stacked Widget
+
+
+
 
 private:
     Ui::manager *ui;
