@@ -3,5 +3,6 @@
         <file>images/bluesandshrew.png</file>
         <file>images/passwordIcon.png</file>
         <file>images/usernameIcon.png</file>
+        <file>images/poke.png</file>
     </qresource>
 </RCC>
