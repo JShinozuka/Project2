@@ -47,8 +47,8 @@
   <widget class="QGroupBox" name="membershipExpirationGroup">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>160</y>
+     <x>20</x>
+     <y>270</y>
      <width>591</width>
      <height>351</height>
     </rect>
