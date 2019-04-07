@@ -13,12 +13,13 @@ manager::manager(QWidget *parent) :
     ui->stackedWidget->insertWidget(2, &managerSalesWindow);
     ui->stackedWidget->insertWidget(3, &managerInventoryWindow);
     ui->stackedWidget->insertWidget(4, &managerMembershipPurchaseWindow);
+    ui->stackedWidget->insertWidget(5, &managerRebateWindow);
 }
 
 // Destructor
 manager::~manager()
 {
-    delete ui;  
+    delete ui;
 }
 
 /****************************************************************************
@@ -54,7 +55,7 @@ void manager::on_homeButton_clicked()
  ***************************************************************************/
 void manager::on_membershipButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);    
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 /****************************************************************************
@@ -115,4 +116,9 @@ void manager::on_logoutButton_clicked()
 void manager::on_membershipPurchasesButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
+}
+void manager::on_salesButton_2_clicked()
+
+{
+    ui->stackedWidget->setCurrentIndex(5);
 }

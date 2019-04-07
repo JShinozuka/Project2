@@ -6,6 +6,7 @@
 #include "managermembership.h"
 #include "managersales.h"
 #include "managerinventory.h"
+#include "managerrebateinfo.h"
 #include "managermemberpurchases.h"
 
 namespace Ui {
@@ -40,6 +41,9 @@ private slots:
     void on_membershipPurchasesButton_clicked();
     //!< Membership Purchase page is displayed in stacked Widget
 
+    void on_salesButton_2_clicked();
+      //!< Rebate page is displayed in stacked Widget
+
 private:
     Ui::manager *ui;
 
@@ -47,6 +51,7 @@ private:
     managerSales      managerSalesWindow;      // Sales window object
     managerInventory  managerInventoryWindow;  // Inventory window object
     managerMemberPurchases managerMembershipPurchaseWindow; //Membership purchase window object
+    managerRebateInfo managerRebateWindow;     // Rebate Information window object
 };
 
 #endif // MANAGER_H

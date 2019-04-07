@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>managerRebateInfo</class>
+ <widget class="QWidget" name="managerRebateInfo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>681</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Manager Rebate Table</string>
+   </property>
+   <widget class="QTableView" name="rebateTableView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>661</width>
+      <height>411</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="selectMonthBox">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>20</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Member ID</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Highest Rebate Amount</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lowest Rebate Amount</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>20</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sort By:</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

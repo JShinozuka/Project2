@@ -192,6 +192,13 @@ border-radius: 5px;</string>
       <y>10</y>
       <width>151</width>
       <height>41</height>
+   <widget class="QPushButton" name="salesButton_2">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>10</y>
+      <width>150</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -216,6 +223,7 @@ border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Member Purchases</string>
+     <string>Rebate Info</string>
     </property>
    </widget>
   </widget>

@@ -36,7 +36,10 @@ SOURCES += \
     admininventory.cpp \
     adminmembership.cpp \
     databasemanger.cpp \
-    managermemberpurchases.cpp
+
+    managermemberpurchases.cpp \
+    managerrebateinfo.cpp
+
 
 HEADERS += \
     admin.h \
@@ -49,7 +52,9 @@ HEADERS += \
     admininventory.h \
     adminmembership.h \
     databasemanger.h \
-    managermemberpurchases.h
+    managermemberpurchases.h \
+    managerrebateinfo.h
+
 
 FORMS += \
     admin.ui \
@@ -61,7 +66,8 @@ FORMS += \
     adminsales.ui \
     admininventory.ui \
     adminmembership.ui \
-    managermemberpurchases.ui
+    managermemberpurchases.ui \
+    managerrebateinfo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
