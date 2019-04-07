@@ -43,19 +43,19 @@ void managerRebateInfo::displayDefaultRebateTable() const
     QSqlQueryModel *model = new QSqlQueryModel;
 
     // Define query model
-    model->setQuery("SELECT customerName, membershipNumber, "
+    model->setQuery("SELECT membershipNumber, customerName, "
                     "rebateAmount "
                     "FROM MembershipDB "
                     "WHERE membershipType = 'Executive' "
-                    "ORDER BY rebateAmount DESC");
+                    "ORDER BY membershipNumber ASC");
 
     // Display query error if exists
     if(model->lastError().isValid())
         qDebug() << model->lastError();
 
     // Set Table Column Header Text
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Name"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Rebate Amount"));
 
     // Display table with query model
@@ -87,13 +87,37 @@ void managerRebateInfo::on_selectMonthBox_currentIndexChanged(int index)
        displayDefaultRebateTable();
     }
     // Display rebate amounts lowest to highest
-    else
+    else if(sortBy == "1")
     {
         // Create query model
         QSqlQueryModel *model = new QSqlQueryModel;
 
         // Define query model
-        model->setQuery("SELECT customerName, membershipNumber, "
+        model->setQuery("SELECT membershipNumber, customerName, "
+                        "rebateAmount "
+                        "FROM MembershipDB "
+                        "WHERE membershipType = 'Executive' "
+                        "ORDER BY rebateAmount DESC ");
+
+        // Display query error if exists
+        if(model->lastError().isValid())
+            qDebug() << model->lastError();
+
+        // Set Table Column Header Text
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Name"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("Rebate Amount"));
+
+        // Display table with query model
+        ui->rebateTableView->setModel(model);
+    }
+    else if(sortBy == "2")
+    {
+        // Create query model
+        QSqlQueryModel *model = new QSqlQueryModel;
+
+        // Define query model
+        model->setQuery("SELECT membershipNumber, customerName, "
                         "rebateAmount "
                         "FROM MembershipDB "
                         "WHERE membershipType = 'Executive' "
@@ -104,8 +128,8 @@ void managerRebateInfo::on_selectMonthBox_currentIndexChanged(int index)
             qDebug() << model->lastError();
 
         // Set Table Column Header Text
-        model->setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
-        model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID"));
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Name"));
         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Rebate Amount"));
 
         // Display table with query model
