@@ -3,11 +3,13 @@
 
 #include <QWidget>
 
-#include "managermembership.h"
+#include "mMembershipExpire.h"
+#include "mDailySales.h"
+#include "mInventory.h"
+#include "mMemberPurchases.h"
+#include "mRebateInfo.h"
+
 #include "managersales.h"
-#include "managerinventory.h"
-#include "managerrebateinfo.h"
-#include "managermemberpurchases.h"
 
 namespace Ui {
 class manager;
@@ -26,35 +28,35 @@ private slots:
     void on_homeButton_clicked();
     //!< Home page is displayed in stackedWidget
 
-    void on_membershipButton_clicked();
-    //!< Membership page is displayed in stackedWidget
+    void on_membershipExpireButton_clicked();
+    //!< Membership Expiration page is displayed in stackedWidget
+
+    void on_dailySalesButton_clicked();
+    //!< Daily Sales page is displayed in stackedWidget
+
+    void on_memberPurchasesButton_clicked();
+    //!< Member Purchases page is displayed in stacked Widget
+
+    void on_rebateButton_clicked();
+    //!< Rebate page is displayed in stacked Widget
 
     void on_salesButton_clicked();
     //!< Sales page is displayed in stackedWidget
 
-    void on_inventoryButton_clicked();
-    //!< Inventory page is displayed in stackedWidget
-
     void on_logoutButton_clicked();
     //!< Manager window closes
 
-    void on_memberPurchasesButton_clicked();
-    //!< Membership Purchase page is displayed in stacked Widget
-
-    void on_salesButton_2_clicked();
-      //!< Rebate page is displayed in stacked Widget
-
-
-
+    void on_inventoryButton_clicked();
 
 private:
     Ui::manager *ui;
 
-    managerMembership managerMembershipWindow; // Membership window object
+    mMembershipExpire mMembershipExpireWindow; // Membership Expiration window object
+    mDailySales       mDailySalesWindow;  // Daily Sales window object
+    mMemberPurchases  mMemberPurchaseWindow; //Membership purchase window object
+    mRebateInfo       mRebateWindow;     // Rebate Information window object
+    mInventory        mInventoryWindow; // Inventory window object
     managerSales      managerSalesWindow;      // Sales window object
-    managerInventory  managerInventoryWindow;  // Inventory window object
-    managerMemberPurchases managerMembershipPurchaseWindow; //Membership purchase window object
-    managerRebateInfo managerRebateWindow;     // Rebate Information window object
 };
 
 #endif // MANAGER_H

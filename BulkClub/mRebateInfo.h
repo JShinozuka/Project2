@@ -1,5 +1,5 @@
-#ifndef MANAGERREBATEINFO_H
-#define MANAGERREBATEINFO_H
+#ifndef MREBATEINFO_H
+#define MREBATEINFO_H
 
 #include <QWidget>
 #include <QSqlDatabase>
@@ -9,16 +9,16 @@
 #include <QDebug>
 
 namespace Ui {
-class managerRebateInfo;
+class mRebateInfo;
 }
 
-class managerRebateInfo : public QWidget
+class mRebateInfo : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit managerRebateInfo(QWidget *parent = nullptr);
-    ~managerRebateInfo();
+    explicit mRebateInfo(QWidget *parent = nullptr);
+    ~mRebateInfo();
 
      void displayDefaultRebateTable() const;
 
@@ -27,8 +27,8 @@ private slots:
      void on_selectMonthBox_currentIndexChanged(int index);
 
 private:
-    Ui::managerRebateInfo *ui;
+    Ui::mRebateInfo *ui;
     QSqlDatabase myDB;
 };
 
-#endif // MANAGERREBATEINFO_H
+#endif // MREBATEINFO_H

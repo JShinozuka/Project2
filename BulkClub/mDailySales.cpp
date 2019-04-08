@@ -1,21 +1,21 @@
-#include "managerinventory.h"
-#include "ui_managerinventory.h"
+#include "mDailySales.h"
+#include "ui_mDailySales.h"
 
-managerInventory::managerInventory(QWidget *parent) :
+mDailySales::mDailySales(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::managerInventory)
+    ui(new Ui::mDailySales)
 {
     ui->setupUi(this);
     //displaySalesReport();
 }
 
-managerInventory::~managerInventory()
+mDailySales::~mDailySales()
 {
     delete ui;
 }
 
 //print the excecutive members daily sales report
-void managerInventory::on_pushButton_clicked()
+void mDailySales::on_pushButton_clicked()
 {
     QSqlQueryModel *model = new QSqlQueryModel;
 
@@ -35,7 +35,7 @@ void managerInventory::on_pushButton_clicked()
 }
 
 //print the regular members daily sales report
-void managerInventory::on_pushButton_2_clicked()
+void mDailySales::on_pushButton_2_clicked()
 {
     QSqlQueryModel *model = new QSqlQueryModel;
 
@@ -55,7 +55,7 @@ void managerInventory::on_pushButton_2_clicked()
 }
 
 //prints the sales daily report for the entered date
-void managerInventory::on_pushButton_3_clicked()
+void mDailySales::on_pushButton_3_clicked()
 {
     QString texttmp = ui->textEdit->toPlainText();
 

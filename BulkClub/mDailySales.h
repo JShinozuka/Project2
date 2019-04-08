@@ -1,5 +1,5 @@
-#ifndef MANAGERINVENTORY_H
-#define MANAGERINVENTORY_H
+#ifndef MDAILYSALES_H
+#define MDAILYSALES_H
 
 #include <QWidget>
 #include <QSqlDatabase>
@@ -9,16 +9,16 @@
 #include <QDebug>
 
 namespace Ui {
-class managerInventory;
+class mDailySales;
 }
 
-class managerInventory : public QWidget
+class mDailySales : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit managerInventory(QWidget *parent = nullptr);
-    ~managerInventory();
+    explicit mDailySales(QWidget *parent = nullptr);
+    ~mDailySales();
 
 private slots:
     void on_pushButton_clicked();
@@ -28,8 +28,8 @@ private slots:
     void on_pushButton_3_clicked();
 
 private:
-    Ui::managerInventory *ui;
+    Ui::mDailySales *ui;
     QSqlDatabase myDB; // Database object for database connection
 };
 
-#endif // MANAGERINVENTORY_H
+#endif // MDAILYSALES_H

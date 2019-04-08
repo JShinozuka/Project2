@@ -1,5 +1,5 @@
-#include "managermemberpurchases.h"
-#include "ui_managermemberpurchases.h"
+#include "mMemberPurchases.h"
+#include "ui_mMemberpurchases.h"
 
 /****************************************************************************
  * CONSTRUCTOR
@@ -14,16 +14,16 @@
  * POST-CONDITIONS
  *      ==> Populates line edit fields
  ***************************************************************************/
-managerMemberPurchases::managerMemberPurchases(QWidget *parent) :
+mMemberPurchases::mMemberPurchases(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::managerMemberPurchases)
+    ui(new Ui::mMemberPurchases)
 {
     //DISPLAY THE TABLE
     ui->setupUi(this);
 
     myDB = QSqlDatabase::database();
-    QSqlQueryModel *model = new QSqlQueryModel;
 
+    QSqlQueryModel *model = new QSqlQueryModel;
 
     model->setQuery("SELECT membershipNum, saleID, date, itemPurchased, quantity "
                     "FROM SalesDB "
@@ -94,7 +94,7 @@ managerMemberPurchases::managerMemberPurchases(QWidget *parent) :
  * POST-CONDITIONS
  *      ==> Deletes ui
  ***************************************************************************/
-managerMemberPurchases::~managerMemberPurchases()
+mMemberPurchases::~mMemberPurchases()
 {
     delete ui;
 }
@@ -112,7 +112,7 @@ managerMemberPurchases::~managerMemberPurchases()
  *      ==> populates line edit fields (salesID, item purchased, salePrice, quantity
  * based on memberID selected)
  ***************************************************************************/
-void managerMemberPurchases::on_memberIDcomboBox_currentIndexChanged()
+void mMemberPurchases::on_memberIDcomboBox_currentIndexChanged()
 {
 
     QString id = ui->memberIDcomboBox->currentText();
@@ -209,7 +209,7 @@ void managerMemberPurchases::on_memberIDcomboBox_currentIndexChanged()
  * based on orderID selected)
  ***************************************************************************/
 
-void managerMemberPurchases::on_orderIDcomboBox_currentIndexChanged()
+void mMemberPurchases::on_orderIDcomboBox_currentIndexChanged()
 {
 
     QString salesID = ui->orderIDcomboBox->currentText();

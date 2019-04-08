@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>managerInventory</class>
- <widget class="QWidget" name="managerInventory">
+ <class>mDailySales</class>
+ <widget class="QWidget" name="mDailySales">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -54,7 +54,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Daily Sales Report</string>
+    <string/>
    </property>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
@@ -138,6 +138,40 @@
      </rect>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>651</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;</string>
+   </property>
+   <property name="text">
+    <string>Daily Sales Report</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>80</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>This is story #10</string>
+   </property>
   </widget>
  </widget>
  <resources/>

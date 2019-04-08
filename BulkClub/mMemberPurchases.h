@@ -1,5 +1,5 @@
-#ifndef MANAGERMEMBERPURCHASES_H
-#define MANAGERMEMBERPURCHASES_H
+#ifndef MMEMBERPURCHASES_H
+#define MMEMBERPURCHASES_H
 
 #include <QWidget>
 #include <QSqlDatabase>
@@ -9,16 +9,16 @@
 #include <QDebug>
 
 namespace Ui {
-class managerMemberPurchases;
+class mMemberPurchases;
 }
 
-class managerMemberPurchases : public QWidget
+class mMemberPurchases : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit managerMemberPurchases(QWidget *parent = nullptr);
-    ~managerMemberPurchases();
+    explicit mMemberPurchases(QWidget *parent = nullptr);
+    ~mMemberPurchases();
 
 private slots:
     void on_memberIDcomboBox_currentIndexChanged();
@@ -31,8 +31,8 @@ private slots:
 
 
 private:
-    Ui::managerMemberPurchases *ui;
+    Ui::mMemberPurchases *ui;
     QSqlDatabase myDB; // Database object for database connection
 };
 
-#endif // MANAGERMEMBERPURCHASES_H
+#endif // MMEMBERPURCHASES_H

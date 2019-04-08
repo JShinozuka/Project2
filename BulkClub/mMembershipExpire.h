@@ -1,5 +1,5 @@
-#ifndef MANAGERMEMBERSHIP_H
-#define MANAGERMEMBERSHIP_H
+#ifndef MMEMBERSHIPEXPIRE_H
+#define MMEMBERSHIPEXPIRE_H
 
 #include <QWidget>
 #include <QSqlDatabase>
@@ -9,17 +9,17 @@
 #include <QDebug>
 
 namespace Ui {
-class managerMembership;
+class mMembershipExpire;
 }
 
-class managerMembership : public QWidget
+class mMembershipExpire : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit managerMembership(QWidget *parent = nullptr);
-    ~managerMembership();
+    explicit mMembershipExpire(QWidget *parent = nullptr);
+    ~mMembershipExpire();
 
     void displayDefaultExpireTable() const;
     //!< Displays all membership expiration
@@ -36,9 +36,9 @@ private slots:
     /*!< Additional Notes: Ordered by expiration date */
 
 private:
-    Ui::managerMembership *ui;
+    Ui::mMembershipExpire *ui;
 
     QSqlDatabase myDB; // Database object for database connection
 };
 
-#endif // MANAGERMEMBERSHIP_H
+#endif // MMEMBERSHIPEXPIRE_H

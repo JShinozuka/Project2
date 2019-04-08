@@ -1,10 +1,10 @@
-#include "managerrebateinfo.h"
-#include "ui_managerrebateinfo.h"
+#include "mRebateInfo.h"
+#include "ui_mRebateInfo.h"
 
 // Default Constructor
-managerRebateInfo::managerRebateInfo(QWidget *parent) :
+mRebateInfo::mRebateInfo(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::managerRebateInfo)
+    ui(new Ui::mRebateInfo)
 {
     ui->setupUi(this);
 
@@ -18,7 +18,7 @@ managerRebateInfo::managerRebateInfo(QWidget *parent) :
 }
 
 // Destructor
-managerRebateInfo::~managerRebateInfo()
+mRebateInfo::~mRebateInfo()
 {
     delete ui;
 }
@@ -37,7 +37,7 @@ managerRebateInfo::~managerRebateInfo()
  *      ==> Returns nothing.
  *      ==> Displays default view of the member rebate table.
  ***************************************************************************/
-void managerRebateInfo::displayDefaultRebateTable() const
+void mRebateInfo::displayDefaultRebateTable() const
 {
     // Create query model
     QSqlQueryModel *model = new QSqlQueryModel;
@@ -76,7 +76,7 @@ void managerRebateInfo::displayDefaultRebateTable() const
  *      ==> Returns nothing.
  *      ==> Displays selected sort of member's rebate amount.
  ***************************************************************************/
-void managerRebateInfo::on_selectMonthBox_currentIndexChanged(int index)
+void mRebateInfo::on_selectMonthBox_currentIndexChanged(int index)
 {
     QString sortBy = QString::number(index); // CALC - expiration month
                                             //        selected for display

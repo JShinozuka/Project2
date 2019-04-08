@@ -1,10 +1,10 @@
-#include "managermembership.h"
-#include "ui_managermembership.h"
+#include "mMembershipExpire.h"
+#include "ui_mMembershipExpire.h"
 
 // Default Constructor
-managerMembership::managerMembership(QWidget *parent) :
+mMembershipExpire::mMembershipExpire(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::managerMembership)
+    ui(new Ui::mMembershipExpire)
 {
     ui->setupUi(this);
 
@@ -16,7 +16,7 @@ managerMembership::managerMembership(QWidget *parent) :
 }
 
 // Destructor
-managerMembership::~managerMembership()
+mMembershipExpire::~mMembershipExpire()
 {
     delete ui;
 }
@@ -35,7 +35,7 @@ managerMembership::~managerMembership()
  *      ==> Returns nothing.
  *      ==> Displays default view of membership expiration table.
  ***************************************************************************/
-void managerMembership::displayDefaultExpireTable() const
+void mMembershipExpire::displayDefaultExpireTable() const
 {
     // Create query model
     QSqlQueryModel *model = new QSqlQueryModel;
@@ -75,7 +75,7 @@ void managerMembership::displayDefaultExpireTable() const
  *      ==> Displays selected month's expiration to membership expiration
  *          table.
  ***************************************************************************/
-void managerMembership::on_selectMonthBox_currentIndexChanged(int index)
+void mMembershipExpire::on_selectMonthBox_currentIndexChanged(int index)
 {
     QString month = QString::number(index); // CALC - expiration month
                                             //        selected for display

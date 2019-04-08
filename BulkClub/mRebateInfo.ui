@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>managerRebateInfo</class>
- <widget class="QWidget" name="managerRebateInfo">
+ <class>mRebateInfo</class>
+ <widget class="QWidget" name="mRebateInfo">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,14 +16,14 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>0</y>
+     <x>20</x>
+     <y>50</y>
      <width>681</width>
      <height>471</height>
     </rect>
    </property>
    <property name="title">
-    <string>Manager Rebate Table</string>
+    <string/>
    </property>
    <widget class="QTableView" name="rebateTableView">
     <property name="geometry">
@@ -73,6 +73,40 @@
      <string>Sort By:</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>451</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;</string>
+   </property>
+   <property name="text">
+    <string>Membership Rebate Information</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>100</y>
+     <width>55</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Story #6</string>
+   </property>
   </widget>
  </widget>
  <resources/>

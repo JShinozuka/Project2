@@ -9,11 +9,12 @@ manager::manager(QWidget *parent) :
     ui->setupUi(this);
 
     // Create a stacked widget index for seperate QWidget pages
-    ui->stackedWidget->insertWidget(1, &managerMembershipWindow);
-    ui->stackedWidget->insertWidget(2, &managerSalesWindow);
-    ui->stackedWidget->insertWidget(3, &managerInventoryWindow);
-    ui->stackedWidget->insertWidget(4, &managerMembershipPurchaseWindow);
-    ui->stackedWidget->insertWidget(5, &managerRebateWindow);
+    ui->stackedWidget->insertWidget(1, &mMembershipExpireWindow);
+    ui->stackedWidget->insertWidget(2, &mDailySalesWindow);
+    ui->stackedWidget->insertWidget(3, &mMemberPurchaseWindow);
+    ui->stackedWidget->insertWidget(4, &mRebateWindow);
+    ui->stackedWidget->insertWidget(5, &mInventoryWindow);
+    ui->stackedWidget->insertWidget(6, &managerSalesWindow);
 }
 
 // Destructor
@@ -53,9 +54,43 @@ void manager::on_homeButton_clicked()
  *      ==> Returns nothing.
  *      ==> Displays Membership QWidget
  ***************************************************************************/
-void manager::on_membershipButton_clicked()
+void manager::on_membershipExpireButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+/****************************************************************************
+ * METHOD - on_inventoryButton_clicked
+ * --------------------------------------------------------------------------
+ * When the inventory button is clicked, the stackedWidget index changes to
+ * display the inventory page.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Displays Inventory QWidget
+ ***************************************************************************/
+void manager::on_dailySalesButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void manager::on_memberPurchasesButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void manager::on_rebateButton_clicked()
+
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void manager::on_inventoryButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
 }
 
 /****************************************************************************
@@ -73,25 +108,7 @@ void manager::on_membershipButton_clicked()
  ***************************************************************************/
 void manager::on_salesButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
-}
-
-/****************************************************************************
- * METHOD - on_inventoryButton_clicked
- * --------------------------------------------------------------------------
- * When the inventory button is clicked, the stackedWidget index changes to
- * display the inventory page.
- * --------------------------------------------------------------------------
- * PRE-CONDITIONS
- *      No parameters are required.
- *
- * POST-CONDITIONS
- *      ==> Returns nothing.
- *      ==> Displays Inventory QWidget
- ***************************************************************************/
-void manager::on_inventoryButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(6);
 }
 
 /****************************************************************************
@@ -111,15 +128,5 @@ void manager::on_logoutButton_clicked()
     this->close();
 }
 
-void manager::on_memberPurchasesButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(4);
-}
-
-void manager::on_salesButton_2_clicked()
-
-{
-    ui->stackedWidget->setCurrentIndex(5);
-}
 
 

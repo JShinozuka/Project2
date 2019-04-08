@@ -61,21 +61,24 @@ void login::connectToDB()
  ***************************************************************************/
 void login::on_loginManagerButton_clicked()
 {
-//    //Creates a single manager username and password
-//    if(managerUsername == "manager" && managerPassword == "123")
-//    {
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        connectToDB();
+/*
+    //Creates a single manager username and password
+    if(managerUsername == "manager" && managerPassword == "123")
+    {
+        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+        connectToDB();
 
-//        // Create new manager object named managerWindow and show
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        managerWindow = new manager();
-//        managerWindow->show();
-//    }
-//    else
-//    {
-//        qDebug() << "Unable to login as manager!";
-//    }
+        // Create new manager object named managerWindow and show
+        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+        managerWindow = new manager();
+        managerWindow->show();
+    }
+    else
+    {
+        qDebug() << "Unable to login as manager!";
+    }
+*/
+
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
 
@@ -83,6 +86,7 @@ void login::on_loginManagerButton_clicked()
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     managerWindow = new manager();
     managerWindow->show();
+
 }
 
 /****************************************************************************
@@ -100,21 +104,23 @@ void login::on_loginManagerButton_clicked()
  ***************************************************************************/
 void login::on_loginAdminButton_clicked()
 {
-//    //Checks if the entered username/password is valid
-//    if(adminUsername == "admin" && adminPassword == "123")
-//    {
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        connectToDB();
+/*
+    //Checks if the entered username/password is valid
+    if(adminUsername == "admin" && adminPassword == "123")
+    {
+        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+        connectToDB();
 
-//        // Create new admin object named adminWindow and show
-//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-//        adminWindow = new admin();
-//        adminWindow->show();
-//    }
-//    else
-//    {
-//        qDebug() << "Unable to login as admin!";
-//    }
+        // Create new admin object named adminWindow and show
+        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+        adminWindow = new admin();
+        adminWindow->show();
+    }
+    else
+    {
+        qDebug() << "Unable to login as admin!";
+    }
+*/
 
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
@@ -123,6 +129,7 @@ void login::on_loginAdminButton_clicked()
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     adminWindow = new admin();
     adminWindow->show();
+
 }
 
 /****************************************************************************
