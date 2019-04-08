@@ -10,8 +10,9 @@ admin::admin(QWidget *parent) :
 
     // Create a stacked widget index for seperate QWidget pages
     ui->stackedWidget->insertWidget(1, &adminMembershipWindow);
-    ui->stackedWidget->insertWidget(2, &adminSalesWindow);
-    ui->stackedWidget->insertWidget(3, &adminInventoryWindow);
+    ui->stackedWidget->insertWidget(2, &aSalesWindow);
+    ui->stackedWidget->insertWidget(3, &aInventoryWindow);
+    ui->stackedWidget->insertWidget(4, &aConvertMemberWindow);
 }
 
 // Destructor
@@ -92,6 +93,11 @@ void admin::on_inventoryButton_clicked()
     ui->stackedWidget->setCurrentIndex(3);
 }
 
+void admin::on_convertMembershipButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
 /****************************************************************************
  * METHOD - on_logoutButton_clicked
  * --------------------------------------------------------------------------
@@ -108,3 +114,5 @@ void admin::on_logoutButton_clicked()
 {
     this->close();
 }
+
+

@@ -1,5 +1,5 @@
-#ifndef ADMINMEMBERSHIP_H
-#define ADMINMEMBERSHIP_H
+#ifndef AMEMBERSHIP_H
+#define AMEMBERSHIP_H
 
 #include <QWidget>
 #include <QSqlDatabase>
@@ -9,21 +9,21 @@
 #include <QDebug>
 
 namespace Ui {
-class adminMembership;
+class aMembership;
 }
 
-class adminMembership : public QWidget
+class aMembership : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit adminMembership(QWidget *parent = nullptr);
-    ~adminMembership();
+    explicit aMembership(QWidget *parent = nullptr);
+    ~aMembership();
 
 private:
-    Ui::adminMembership *ui;
+    Ui::aMembership *ui;
 
     QSqlDatabase myDB; // Database object for database connection
 };
 
-#endif // ADMINMEMBERSHIP_H
+#endif // AMEMBERSHIP_H

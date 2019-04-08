@@ -1,9 +1,9 @@
-#include "adminmembership.h"
-#include "ui_adminmembership.h"
+#include "aMembership.h"
+#include "ui_aMembership.h"
 
-adminMembership::adminMembership(QWidget *parent) :
+aMembership::aMembership(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::adminMembership)
+    ui(new Ui::aMembership)
 {
     ui->setupUi(this);
 
@@ -18,7 +18,7 @@ adminMembership::adminMembership(QWidget *parent) :
     ui->memberDBTable->setModel(model);
 }
 
-adminMembership::~adminMembership()
+aMembership::~aMembership()
 {
     delete ui;
 }

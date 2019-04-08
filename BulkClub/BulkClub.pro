@@ -30,15 +30,16 @@ SOURCES += \
     manager.cpp \
     login.cpp \
     managersales.cpp \
-    adminsales.cpp \
-    admininventory.cpp \
-    adminmembership.cpp \
     databasemanger.cpp \
     mMembershipExpire.cpp \
     mDailySales.cpp \
     mMemberPurchases.cpp \
     mRebateInfo.cpp \
-    mInventory.cpp
+    mInventory.cpp \
+    aInventory.cpp \
+    aConvertMembership.cpp \
+    aSales.cpp \
+    aMembership.cpp
 
 
 HEADERS += \
@@ -46,15 +47,16 @@ HEADERS += \
     manager.h \
     login.h \
     managersales.h \
-    adminsales.h \
-    admininventory.h \
-    adminmembership.h \
     databasemanger.h \
     mMembershipExpire.h \
     mDailySales.h \
     mMemberPurchases.h \
     mRebateInfo.h \
-    mInventory.h
+    mInventory.h \
+    aInventory.h \
+    aConvertMembership.h \
+    aSales.h \
+    aMembership.h
 
 
 FORMS += \
@@ -62,14 +64,15 @@ FORMS += \
     manager.ui \
     login.ui \
     managersales.ui \
-    adminsales.ui \
-    admininventory.ui \
-    adminmembership.ui \
     mMembershipExpire.ui \
     mDailySales.ui \
     mMemberPurchases.ui \
     mRebateInfo.ui \
-    mInventory.ui
+    mInventory.ui \
+    aInventory.ui \
+    aConvertMembership.ui \
+    aSales.ui \
+    aMembership.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

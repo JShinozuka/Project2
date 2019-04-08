@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>adminMembership</class>
- <widget class="QWidget" name="adminMembership">
+ <class>aSales</class>
+ <widget class="QWidget" name="aSales">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -34,24 +34,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>510</y>
-     <width>481</width>
-     <height>91</height>
+     <x>120</x>
+     <y>200</y>
+     <width>281</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="text">
-    <string>Admin Membership Widget</string>
-   </property>
-  </widget>
-  <widget class="QTableView" name="memberDBTable">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>1181</width>
-     <height>421</height>
-    </rect>
+    <string>Admin Sales Widget</string>
    </property>
   </widget>
  </widget>

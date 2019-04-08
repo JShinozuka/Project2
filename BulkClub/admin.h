@@ -3,9 +3,10 @@
 
 #include <QWidget>
 
-#include "adminmembership.h"
-#include "adminsales.h"
-#include "admininventory.h"
+#include "aMembership.h"
+#include "aSales.h"
+#include "aInventory.h"
+#include "aConvertMembership.h"
 
 namespace Ui {
 class admin;
@@ -33,15 +34,19 @@ private slots:
     void on_inventoryButton_clicked();
     //!< Inventory page is displayed in stackedWidget
 
+    void on_convertMembershipButton_clicked();
+    //!< Convert Membership page is displayed in stackedWidget
+
     void on_logoutButton_clicked();
     //!< Admin window closes
 
 private:
     Ui::admin *ui;
 
-    adminMembership adminMembershipWindow; // Membership window object
-    adminSales      adminSalesWindow;      // Sales window object
-    adminInventory  adminInventoryWindow;  // Inventory window object
+    aMembership adminMembershipWindow; // Membership window object
+    aSales      aSalesWindow;      // Sales window object
+    aInventory  aInventoryWindow;  // Inventory window object
+    aConvertMembership aConvertMemberWindow; // Convert Membership window object
 };
 
 #endif // ADMIN_H
