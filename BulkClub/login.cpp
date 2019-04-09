@@ -61,23 +61,26 @@ void login::connectToDB()
  ***************************************************************************/
 void login::on_loginManagerButton_clicked()
 {
-/*
-    //Creates a single manager username and password
-    if(managerUsername == "manager" && managerPassword == "123")
-    {
-        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-        connectToDB();
 
-        // Create new manager object named managerWindow and show
-        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-        managerWindow = new manager();
-        managerWindow->show();
-    }
-    else
-    {
-        qDebug() << "Unable to login as manager!";
-    }
-*/
+//    //Creates a single manager username and password
+//    if(managerUsername == "manager" && managerPassword == "123")
+//    {
+//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+//        connectToDB();
+
+//        // Create new manager object named managerWindow and show
+//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+//        managerWindow = new manager();
+//        managerWindow->show();
+//      //  this->close();
+//    }
+//    else
+//    {
+//        QMessageBox::information(this, "Error!",
+//            "Invalid username or password!",
+//            QMessageBox::Ok);
+//    }
+
 
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
@@ -86,6 +89,7 @@ void login::on_loginManagerButton_clicked()
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     managerWindow = new manager();
     managerWindow->show();
+//    this->close();
 
 }
 
@@ -104,23 +108,27 @@ void login::on_loginManagerButton_clicked()
  ***************************************************************************/
 void login::on_loginAdminButton_clicked()
 {
-/*
-    //Checks if the entered username/password is valid
-    if(adminUsername == "admin" && adminPassword == "123")
-    {
-        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-        connectToDB();
 
-        // Create new admin object named adminWindow and show
-        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
-        adminWindow = new admin();
-        adminWindow->show();
-    }
-    else
-    {
-        qDebug() << "Unable to login as admin!";
-    }
-*/
+//    //Checks if the entered username/password is valid
+//    if(adminUsername == "admin" && adminPassword == "123")
+//    {
+//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+//        connectToDB();
+
+//        // Create new admin object named adminWindow and show
+//        // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
+//        adminWindow = new admin();
+//        adminWindow->show();
+//       // this->close();
+//    }
+//    else
+//    {
+//        QMessageBox::information(this, "Error!",
+//            "Invalid username or password!",
+//            QMessageBox::Ok);
+
+//    }
+
 
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     connectToDB();
@@ -129,6 +137,7 @@ void login::on_loginAdminButton_clicked()
     // THIS SHOULD BE LOCATED IN VALID LOGIN ONLY
     adminWindow = new admin();
     adminWindow->show();
+    //this->close();
 
 }
 

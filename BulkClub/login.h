@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QStackedLayout>
 #include <QDebug>
+#include <QMessageBox>
+
 
 #include "admin.h"
 #include "manager.h"
