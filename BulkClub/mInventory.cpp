@@ -1,5 +1,5 @@
 #include "mInventory.h"
-#include "ui_minventory.h"
+#include "ui_mInventory.h"
 
 mInventory::mInventory(QWidget *parent) :
     QWidget(parent),
