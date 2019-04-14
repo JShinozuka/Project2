@@ -4,5 +4,7 @@
         <file>images/passwordIcon.png</file>
         <file>images/usernameIcon.png</file>
         <file>images/poke.png</file>
+        <file>images/sandshrewInverted3.jpg</file>
+        <file>images/snow.jpg</file>
     </qresource>
 </RCC>
