@@ -42,7 +42,7 @@ void mMembershipExpire::displayDefaultExpireTable() const
 
     // Define query model
     model->setQuery("SELECT customerName, membershipNumber, "
-                    "membershipType, expireDate "
+                    "membershipType, expireDate, renewalCost  "
                     "FROM MembershipDB "
                     "ORDER BY expireDate");
 
@@ -55,6 +55,7 @@ void mMembershipExpire::displayDefaultExpireTable() const
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Membership"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Date Expires"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Renewal cost"));
 
     // Display table with query model
     ui->membershipExpirationTable->setModel(model);
@@ -93,10 +94,10 @@ void mMembershipExpire::on_selectMonthBox_currentIndexChanged(int index)
 
         // Define query model
         model->setQuery("SELECT customerName, membershipNumber, "
-                        "membershipType, expireDate "
+                        "membershipType, expireDate, renewalCost "
                         "FROM MembershipDB "
                         "WHERE monthExpire ='"+ month + "' "
-                        "ORDER BY expireDate");
+                        "ORDER BY expireDate ");
 
         // Display query error if exists
         if(model->lastError().isValid())
@@ -107,6 +108,7 @@ void mMembershipExpire::on_selectMonthBox_currentIndexChanged(int index)
         model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID"));
         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Membership"));
         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Date Expires"));
+        model->setHeaderData(4, Qt::Horizontal, QObject::tr("Renewal cost"));
 
         // Display table with query model
         ui->membershipExpirationTable->setModel(model);
