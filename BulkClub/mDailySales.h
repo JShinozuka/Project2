@@ -23,9 +23,11 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_selectDateButton_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_viewAllMembersButton_clicked();
+
+    void on_regularMembersView_clicked();
 
 private:
     Ui::mDailySales *ui;
