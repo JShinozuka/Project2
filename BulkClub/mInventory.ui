@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="headerLabel">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -36,7 +36,7 @@
    </property>
    <property name="font">
     <font>
-     <family>MS Shell Dlg 2</family>
+     <family>Consolas</family>
      <pointsize>18</pointsize>
      <weight>9</weight>
      <italic>false</italic>
@@ -44,9 +44,9 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: white;
-font: 75 18pt &quot;MS Shell Dlg 2&quot;;
-background-image: url(:/images/snow.jpg);</string>
+    <string notr="true">color:black;
+font: 75 18pt &quot;Consolas&quot;;
+background: LightBlue</string>
    </property>
    <property name="text">
     <string>Inventory Information Report</string>
@@ -94,6 +94,12 @@ background-image: url(:/images/snow.jpg);</string>
       <width>190</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLineEdit" name="itemQuantityLineEdit">
@@ -189,7 +195,7 @@ background-image: url(:/images/snow.jpg);</string>
   </widget>
   <zorder>sandshrewLabel</zorder>
   <zorder>inventoryTableView</zorder>
-  <zorder>label</zorder>
+  <zorder>headerLabel</zorder>
   <zorder>groupBox</zorder>
  </widget>
  <resources/>

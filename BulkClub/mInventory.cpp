@@ -52,6 +52,8 @@ mInventory::mInventory(QWidget *parent) :
 
     ui->InventoryComboBox->setModel(combo);
 
+    ui->InventoryComboBox->setStyleSheet("QComboBox { background-color: LightBlue; }");
+
     /*
     //QSqlQuery * qry2 = new QSqlQuery(myDB);
     QSqlQueryModel * combo2 = new QSqlQueryModel();
@@ -110,7 +112,7 @@ void mInventory::on_InventoryComboBox_currentIndexChanged()
             ui->itemQuantityLineEdit->setText(qry.value(0).toString());
             ui->itemTotalLineEdit->setText(QString::number(sale,'f',2));
 
-        }
+         }
     }
     else
     {
