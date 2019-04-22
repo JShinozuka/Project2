@@ -20,6 +20,13 @@ public:
     explicit aMembership(QWidget *parent = nullptr);
     ~aMembership();
 
+private slots:
+    void on_addCustomer_clicked();
+
+    void on_deleteCustomer_clicked();
+
+    void displayDefaultTable() const;
+
 private:
     Ui::aMembership *ui;
 

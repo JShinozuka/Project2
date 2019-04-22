@@ -31,28 +31,568 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>510</y>
-     <width>481</width>
-     <height>91</height>
+     <x>30</x>
+     <y>0</y>
+     <width>1091</width>
+     <height>671</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Admin Membership Widget</string>
+   <property name="title">
+    <string>GroupBox</string>
    </property>
-  </widget>
-  <widget class="QTableView" name="memberDBTable">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>1181</width>
-     <height>421</height>
-    </rect>
-   </property>
+   <widget class="QTableView" name="memberDBTable">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>561</width>
+      <height>571</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>20</y>
+      <width>431</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QTextEdit" name="name">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>30</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="membershipNum">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>60</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="totalAmountSpent">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>160</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addCustomer">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>190</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add Customer</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Memmership Number</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Membership Type</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Expiration Date</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Total Amount Spent</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="membershipTypeBox">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>90</y>
+       <width>261</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Executive</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Regular</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="monthBox">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>120</y>
+       <width>71</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>10</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>11</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>12</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="dayBox">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>120</y>
+       <width>71</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>10</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>11</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>12</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>13</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>14</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>15</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>16</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>17</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>18</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>19</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>20</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>21</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>22</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>23</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>24</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>25</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>26</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>27</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>28</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>29</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>30</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>31</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="yearBox">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>120</y>
+       <width>81</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>2000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2001</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2002</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2003</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2004</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2005</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2006</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2007</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2008</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2009</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2010</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2011</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2012</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2013</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2014</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2015</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2016</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2017</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2018</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2019</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>280</y>
+      <width>421</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QComboBox" name="customerNameBox">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>40</y>
+       <width>221</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>40</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Customer Name:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="deleteCustomer">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>80</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete Customer</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>
