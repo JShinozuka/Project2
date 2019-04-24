@@ -1,46 +1,53 @@
 #include "aMembership.h"
 #include "ui_aMembership.h"
 
+//Default Constructor
 aMembership::aMembership(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::aMembership)
 {
     ui->setupUi(this);
-
+    //Create database and display the table
     myDB = QSqlDatabase::database();
     displayDefaultTable();
 
     //populate the combo box
-    QSqlQuery * query = new QSqlQuery(myDB);
-    QSqlQueryModel * comboBox = new QSqlQueryModel();
-
-    query->prepare("SELECT DISTINCT customerName "
-                   "FROM MembershipDB "
-                   "ORDER BY customerName COLLATE NOCASE ASC ");
-    query->exec();
-
-    comboBox->setQuery(*query);
-
-    ui->customerNameBox->setModel(comboBox);
+   updateComboBox();
 }
 
+//Destructor
 aMembership::~aMembership()
 {
     delete ui;
 }
 
+/****************************************************************************
+ * METHOD - on_addCustomer_clicked()
+ * --------------------------------------------------------------------------
+ * This method creates a new member with data entered from an admin.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Updates database/table view
+ *      ==> Updates and shows the correct name box for deleting afterwards
+ ***************************************************************************/
 void aMembership::on_addCustomer_clicked()
 {
-   QString name, num, type, date, totalAmount,rebateAmount, renewalCost;
+   QString name, num, type, date, totalAmount, renewalCost;
+   int day, month, year;
    name = ui->name->toPlainText();
    num= ui->membershipNum->toPlainText();
    type = ui->membershipTypeBox->currentText();
-   //date=  ui->expirationDate->toPlainText();
    totalAmount=  '0';
-   rebateAmount = '0';
-   QString year = ui->yearBox->currentText();
-   QString month = ui->monthBox->currentText();
-   QString day = ui->dayBox->currentText();
+
+
+   month = ui->dateEdit->date().month();
+   day = ui->dateEdit->date().day();
+   year = ui->dateEdit->date().year();
+
+   date = ui->dateEdit->date().toString("MM/dd/yyyy");
    qDebug() << month << " " << day << " " << year;
 
    if (type == "Regular")
@@ -55,27 +62,72 @@ void aMembership::on_addCustomer_clicked()
    QSqlQuery query;
 
    query.prepare("INSERT INTO membershipDB (customerName, membershipNumber, membershipType, "
-                 "expireDate, totalAmountSpent, rebateAmount, renewalCost) "
-                 "VALUES ('"+name+"' , '"+num+"', '"+type+"', '"+date+"', '"+totalAmount+"', "
-                         "'"+renewalCost+"') " );
+                 "expireDate, totalAmountSpent) "
+                 "VALUES ('"+name+"' , '"+num+"', '"+type+"', '"+date+"', '"+totalAmount+"') " );
 
    if(query.exec())
           qDebug()<<("added");
   else
       qDebug()<<("add failed");
+   displayDefaultTable();
+   updateComboBox();
+
 }
 
+/****************************************************************************
+ * METHOD - on_deleteCustomer_clicked
+ * --------------------------------------------------------------------------
+ * This method deletes a customer when an admin selects the correspoding name
+ * clicks on the button.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Creates and connects to SQLite database if not open
+ ***************************************************************************/
 void aMembership::on_deleteCustomer_clicked()
 {
-    QSqlQueryModel *model = new QSqlQueryModel;
+    QMessageBox::StandardButton message;
+    message = QMessageBox::information(this, "Are you sure?",
+                  "You are about to delete a member!",
+                  QMessageBox::Ok,QMessageBox::No);
+    if(message == QMessageBox::Ok)
+    {
+        QSqlQueryModel *model = new QSqlQueryModel;
 
-    QString name = ui->customerNameBox->currentText();
+        QString name = ui->customerNameBox->currentText();
 
-    model->setQuery("DELETE FROM MembershipDB "
-                    "WHERE customerName  = '"+ name + "' ");
+        model->setQuery("DELETE FROM MembershipDB "
+                        "WHERE customerName  = '"+ name + "' ");
 
-    displayDefaultTable();
+
+        displayDefaultTable();
+        updateComboBox();
+    }
+    else if(message == QMessageBox::No)
+    {
+        displayDefaultTable();
+        updateComboBox();
+    }
+
 }
+
+/****************************************************************************
+ * METHOD - displayDefaultRebateTable
+ * --------------------------------------------------------------------------
+ * Displays default view for executive member's rebate table.  Displays
+ * customer name, membership id number, and rebate amount.
+ * Table is ordered by rebate amount (ascending order).
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Displays default view of the member rebate table.
+ ***************************************************************************/
  void aMembership::displayDefaultTable() const
  {
      QSqlQueryModel *model = new QSqlQueryModel;
@@ -94,4 +146,31 @@ void aMembership::on_deleteCustomer_clicked()
      model->setHeaderData(5, Qt::Horizontal, QObject::tr("Rebate Amount"));
 
     ui->memberDBTable->setModel(model);
+ }
+
+ /****************************************************************************
+  * METHOD - updateComboBox
+  * --------------------------------------------------------------------------
+  * This function will update the combo box for the peoples names.
+  * --------------------------------------------------------------------------
+  * PRE-CONDITIONS
+  *      No parameters are required.
+  *
+  * POST-CONDITIONS
+  *      ==> Returns nothing.
+  *      ==> Displays updated information for the combo box
+  ***************************************************************************/
+ void aMembership::updateComboBox() const
+ {
+     QSqlQuery * query2 = new QSqlQuery(myDB);
+     QSqlQueryModel * comboBox = new QSqlQueryModel();
+
+     query2->prepare("SELECT DISTINCT customerName "
+                    "FROM MembershipDB "
+                    "ORDER BY customerName COLLATE NOCASE ASC ");
+     query2->exec();
+
+     comboBox->setQuery(*query2);
+
+     ui->customerNameBox->setModel(comboBox);
  }
