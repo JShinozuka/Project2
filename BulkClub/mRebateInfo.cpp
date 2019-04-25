@@ -78,7 +78,7 @@ void mRebateInfo::displayDefaultRebateTable() const
  ***************************************************************************/
 void mRebateInfo::on_selectMonthBox_currentIndexChanged(int index)
 {
-    QString sortBy = QString::number(index); // CALC - expiration month
+    sortBy = QString::number(index); // CALC - expiration month
                                             //        selected for display
 
     // If index 0 (view rebate amounts, highest to lowest)

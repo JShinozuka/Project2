@@ -25,7 +25,7 @@ public:
 private slots:
 //    void on_delNameComboBox_currentIndexChanged();
 
-    void on_delNameComboBox_currentIndexChanged(int index);
+   // void on_delNameComboBox_currentIndexChanged(int index);
 
 private:
     Ui::aInventory *ui;

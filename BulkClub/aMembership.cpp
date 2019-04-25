@@ -35,12 +35,11 @@ aMembership::~aMembership()
  ***************************************************************************/
 void aMembership::on_addCustomer_clicked()
 {
-   QString name, num, type, date, totalAmount, renewalCost;
-   int day, month, year;
    name = ui->name->toPlainText();
    num= ui->membershipNum->toPlainText();
    type = ui->membershipTypeBox->currentText();
    totalAmount=  '0';
+   rebateAmount= '0';
 
 
    month = ui->dateEdit->date().month();
@@ -59,18 +58,34 @@ void aMembership::on_addCustomer_clicked()
    renewalCost = "120";
    }
 
-   QSqlQuery query;
+   QSqlQuery * qry5 = new QSqlQuery(myDB);
 
-   query.prepare("INSERT INTO membershipDB (customerName, membershipNumber, membershipType, "
-                 "expireDate, totalAmountSpent) "
-                 "VALUES ('"+name+"' , '"+num+"', '"+type+"', '"+date+"', '"+totalAmount+"') " );
+   qry5->prepare("INSERT INTO membershipDB(customerName, membershipNumber, membershipType, "
+                 "expireDate, monthExpire, dayExpire, yearExpire, totalAmountSpent, rebateAmount, renewalCost) "
+                 "VALUES (:name, :num, "
+                 ":type,:date,:month, "
+                 ":day,:year,:totalAmount, "
+                 ":rebateAmount, :renewalCost)");
+   qry5->bindValue(0, name);
+   qry5->bindValue(1, num);
+   qry5->bindValue(2, type);
+   qry5->bindValue(3, date);
+   qry5->bindValue(4,QString::number(month));
+   qry5->bindValue(5,QString::number(day));
+   qry5->bindValue(6,QString::number(year));
+   qry5->bindValue(7, totalAmount);
+   qry5->bindValue(8, rebateAmount);
+   qry5->bindValue(9, renewalCost);
 
-   if(query.exec())
+
+   if(qry5->exec())
           qDebug()<<("added");
   else
       qDebug()<<("add failed");
    displayDefaultTable();
    updateComboBox();
+   ui->name->clear();
+   ui->membershipNum->clear();
 
 }
 
@@ -89,10 +104,12 @@ void aMembership::on_addCustomer_clicked()
  ***************************************************************************/
 void aMembership::on_deleteCustomer_clicked()
 {
+    //Deletion message
     QMessageBox::StandardButton message;
-    message = QMessageBox::information(this, "Are you sure?",
+    message = QMessageBox::information(this, "Confirm action",
                   "You are about to delete a member!",
                   QMessageBox::Ok,QMessageBox::No);
+
     if(message == QMessageBox::Ok)
     {
         QSqlQueryModel *model = new QSqlQueryModel;

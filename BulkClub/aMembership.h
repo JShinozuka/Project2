@@ -18,6 +18,7 @@ class aMembership;
 
 /*!
  * \brief The aMembership class
+ * \class aMembership
  */
 class aMembership : public QWidget
 {
@@ -47,6 +48,7 @@ private slots:
      * \brief displayDefaultTable
      */
     void displayDefaultTable() const;
+
     /*!
      * \brief updateComboBox
      */
@@ -54,16 +56,76 @@ private slots:
 
 private:
     /*!
-     * \brief ui
-     * \param ui
+     * \var ui
+     * \brief type: QString
      */
     Ui::aMembership *ui;
 
     /*!
-     * \brief myDB
-     * \param myDB
+     * \var myDB
+     * \brief type: QString
      */
     QSqlDatabase myDB; // Database object for database connection
+
+    /*!
+     * \var name
+     * \brief type: QString
+     */
+    QString name;
+
+    /*!
+     * \var num
+     * \brief type: QString
+     */
+    QString num;
+
+    /*!
+     * \var type
+     * \brief type: QString
+     */
+    QString type;
+
+    /*!
+     * \var date
+     * \brief type: QString
+     */
+    QString date;
+
+    /*!
+     * \var totalAmount
+     * \brief type: QString
+     */
+    QString totalAmount;
+
+    /*!
+     * \var rebateAmount
+     * \brief type: QString
+     */
+    QString rebateAmount;
+
+    /*!
+     * \var renewalCost
+     * \brief type: QString
+     */
+    QString renewalCost;
+
+    /*!
+     * \var day
+     * \brief type: Integer
+     */
+    int day;
+
+    /*!
+     * \var month
+     * \brief type: Integer
+     */
+    int month;
+
+    /*!
+     * \var year
+     * \brief type: Integer
+     */
+    int year;
 };
 
 #endif // AMEMBERSHIP_H

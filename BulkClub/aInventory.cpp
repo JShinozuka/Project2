@@ -92,7 +92,4 @@ void aInventory::on_delNameComboBox_currentIndexChanged()
         qDebug() << ("Admin Inventory Widget Error: Unable to update delete qty and revenue lines.");
     }
 }*/
-void aInventory::on_delNameComboBox_currentIndexChanged(int index)
-{
 
-}

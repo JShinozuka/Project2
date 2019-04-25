@@ -1,6 +1,7 @@
 #include "aConvertMembership.h"
 #include "ui_aConvertMembership.h"
 
+//Default Constructor
 aConvertMembership::aConvertMembership(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::aConvertMembership)
