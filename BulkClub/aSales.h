@@ -9,7 +9,6 @@
 #include <QDebug>
 #include <QMessageBox>
 
-
 namespace Ui {
 class aSales;
 }
@@ -21,7 +20,9 @@ class aSales : public QWidget
 public:
     explicit aSales(QWidget *parent = nullptr);
     ~aSales();
+    void defaultSalesTable();
     void defaultAddSale(); // default sales form
+    void addSaleToDB();
 
 private slots:
     void on_addSalesButton_clicked();
@@ -33,16 +34,24 @@ private:
     const double REBATE_RATE_VAR = 0.02;
 
     QSqlDatabase myDB; // Database object for database connection
+
+    // Sales DB variables
     int monthVar, dayVar, yearVar; //month, day and year variables
-    int membershipNumVar; // membership number
-    int qtyVar; // quantity
-    QString saleIDVar = "";
+    int membershipNumVar;          // membership number
+    int qtyVar;                    // quantity
+/****************** not recommended to initalize variables here *****/
+    QString saleIDVar = ""; //
     QString itemPurchasedVar, dateVar;
     double salesPriceVar; //sales price
     double salesTotalVar; // sales price * quantity + tax
+
+    // Membership DB variables
     double totalAmtSpentVar; // total amount member spent
     double rebateVar;        // rebate amount
 
+    // Inventory DB variables
+    int itemQty; // item quantity
+    double itemTotal; // item total revenue
 };
 
 #endif // ASALES_H

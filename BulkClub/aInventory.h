@@ -7,6 +7,7 @@
 #include <QSqlQueryModel>
 #include <QSqlError>
 #include <QDebug>
+#include <QMessageBox>
 
 namespace Ui {
 class aInventory;
@@ -23,15 +24,24 @@ public:
     void defaultView();
 
 private slots:
-//    void on_delNameComboBox_currentIndexChanged();
+    void on_addItemButton_clicked();
+    //!< Adds new item name to InventoryDB
+    /*!< itemName  = ui->addItemNameLine->text(); */
+    /*!< itemQty   = 0; itemTotal = 0.0 */
 
-   // void on_delNameComboBox_currentIndexChanged(int index);
+    void on_editItemButton_clicked();
+
+    void on_deleteItemButton_clicked();
+
+    void on_delNameComboBox_currentIndexChanged();
 
 private:
     Ui::aInventory *ui;
     QSqlDatabase myDB; // Database object for database connection
 
-    QString itemName; //
+    QString itemName;  // IN&CALC - name of item
+    int     itemQty;   // OUT     - quantity of the item
+    double  itemTotal; // OUT     - revenue total of the item
 };
 
 #endif // AINVENTORY_H
