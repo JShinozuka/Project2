@@ -21,7 +21,9 @@ public:
     ~managerSales();
 
     void displaySalesPerMember() const;
-
+    //!< Displays all membership expiration
+    /*!< POST: Displays customer name, membership number, membership type,
+               and expiration date */
 
 private slots:
 
@@ -32,6 +34,7 @@ private slots:
 private:
     Ui::managerSales *ui;
     QSqlDatabase myDB; // Database object for database connection
+    QString textTemp;
 };
 
 #endif // MANAGERSALES_H

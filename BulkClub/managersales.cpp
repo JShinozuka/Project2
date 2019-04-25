@@ -18,6 +18,18 @@ managerSales::~managerSales()
     delete ui;
 }
 
+/*****************************************************************
+ * METHOD - displaySalesPerMember()
+ * ---------------------------------------------------------------
+ * This method is displays the sales by per member
+ * ---------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      The following variables must be declared and initialized:
+ *          model  : SQL query pointer
+ *
+ * POST-CONDITIONS
+ *
+ *****************************************************************/
  void managerSales::displaySalesPerMember() const
  {
      // Create query model
@@ -39,15 +51,29 @@ managerSales::~managerSales()
      ui->salesTotalPurchaseTable->setModel(model);
  }
 
+
+ /*****************************************************************
+  * METHOD - displaySalesPerMember()
+  * ---------------------------------------------------------------
+  * This method is displays the sales by per member by the entered
+  * name
+  * ---------------------------------------------------------------
+  * PRE-CONDITIONS
+  *      The following variables must be declared and initialized:
+  *          model  : SQL query pointer
+  *
+  * POST-CONDITIONS
+  *
+  *****************************************************************/
 void managerSales::on_Search_clicked()
 {
-     QString texttmp = ui->textEdit->toPlainText();
+     textTemp = ui->textEdit->toPlainText();
 
      QSqlQueryModel *model = new QSqlQueryModel;
 
      model->setQuery("SELECT customerName, membershipNumber, totalAmountSpent "
                      "FROM MembershipDB "
-                     "WHERE customerName ='"+ texttmp + "' "
+                     "WHERE customerName ='"+ textTemp + "' "
                      "ORDER BY customerName");
 
      model->setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
@@ -58,15 +84,16 @@ void managerSales::on_Search_clicked()
      ui->salesTotalPurchaseTable->setModel(model);
 }
 
+
 void managerSales::on_pushButton_clicked()
 {
-    QString texttmp = ui->textEdit->toPlainText();
+    textTemp = ui->textEdit->toPlainText();
 
     QSqlQueryModel *model = new QSqlQueryModel;
 
     model->setQuery("SELECT customerName, membershipNumber, totalAmountSpent "
                     "FROM MembershipDB "
-                    "WHERE membershipNumber ='"+ texttmp + "' "
+                    "WHERE membershipNumber ='"+ textTemp + "' "
                     "ORDER BY customerName");
 
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));

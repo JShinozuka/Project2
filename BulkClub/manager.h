@@ -50,13 +50,36 @@ private slots:
 
 private:
     Ui::manager *ui;
-
-    mMembershipExpire mMembershipExpireWindow; // Membership Expiration window object
-    mDailySales       mDailySalesWindow;  // Daily Sales window object
-    mMemberPurchases  mMemberPurchaseWindow; //Membership purchase window object
-    mRebateInfo       mRebateWindow;     // Rebate Information window object
-    mInventory        mInventoryWindow; // Inventory window object
-    managerSales      managerSalesWindow;      // Sales window object
+    /*!
+     * \var mMembershipExpireWindow
+     * \brief Membership Expiration window object
+     */
+    mMembershipExpire mMembershipExpireWindow;  //IN/OUT- Membership Expiration window object
+    /*!
+     * \var mDailySalesWindow
+     * \brief Daily Sales window object
+     */
+    mDailySales       mDailySalesWindow;  //IN/OUT- Daily Sales window object
+    /*!
+     * \var mMemberPurchaseWindow
+     * \brief Membership purchase window object
+     */
+    mMemberPurchases  mMemberPurchaseWindow; //IN/OUT- Membership purchase window object
+    /*!
+     * \var mRebateWindow
+     * \brief Rebate Information window object
+     */
+    mRebateInfo       mRebateWindow;     //IN/OUT- Rebate Information window object
+    /*!
+     * \var mInventoryWindow
+     * \brief Inventory window object
+     */
+    mInventory        mInventoryWindow; // IN/OUT- Inventory window object
+    /*!
+     * \var managerSalesWindow
+     * \brief Sales window object
+     */
+    managerSales      managerSalesWindow;   //IN/OUT- Sales window object
 };
 
 #endif // MANAGER_H
