@@ -14,12 +14,24 @@ mDailySales::~mDailySales()
     delete ui;
 }
 
-//print the excecutive members daily sales report
+/*****************************************************************
+ * METHOD - on_pushButton_clicked
+ * ---------------------------------------------------------------
+ * This method printst the executive member daily sales report
+ * ---------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      The following variables must be declared and initialized:
+ *          year  : Qstring year variable
+ *          month : Qstring month variable
+ *          day   : Qstring day variable
+ * POST-CONDITIONS
+ *
+ *****************************************************************/
 void mDailySales::on_pushButton_clicked()
 {
-    QString year = ui->yearBox->currentText();
-    QString month = ui->monthBox->currentText();
-    QString day = ui->dateBox->currentText();
+    year = ui->yearBox->currentText();
+    month = ui->monthBox->currentText();
+    day = ui->dateBox->currentText();
 
     QSqlQueryModel *model = new QSqlQueryModel;
 
@@ -41,12 +53,25 @@ void mDailySales::on_pushButton_clicked()
     ui->salesReportTableView->setModel(model);
 }
 
-//select date - code same as above
+/*****************************************************************
+ * METHOD - on_selectDateButton_clicked()
+ * ---------------------------------------------------------------
+ * This method prints the daily sales report for the selected
+ * date
+ * ---------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      The following variables must be declared and initialized:
+ *          year  : Qstring year variable
+ *          month : Qstring month variable
+ *          day   : Qstring day variable
+ * POST-CONDITIONS
+ *
+ *****************************************************************/
 void mDailySales::on_selectDateButton_clicked()
 {
-    QString year = ui->yearBox->currentText();
-    QString month = ui->monthBox->currentText();
-    QString day = ui->dateBox->currentText();
+    year = ui->yearBox->currentText();
+    month = ui->monthBox->currentText();
+    day = ui->dateBox->currentText();
 
     QSqlQueryModel *model = new QSqlQueryModel;
     QSqlQuery totalRevenueCalc;
@@ -114,12 +139,29 @@ void mDailySales::on_selectDateButton_clicked()
     ui->salesReportTableView->setModel(model);
 }
 
-//button to view all members
+/*****************************************************************
+ * METHOD - on_viewAllMembersButton_clicked()
+ * ---------------------------------------------------------------
+ * This method prints the daily sales report for the selected
+ * date
+ * ---------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      The following variables must be declared and initialized:
+ *          year  : Qstring year variable
+ *          month : Qstring month variable
+ *          day   : Qstring day variable
+ *          totalRevenueCalc : total revenue variable
+ *          numOfExecMembers : number of exec members
+ *          numOfRegMembers  : number of reg members
+ * POST-CONDITIONS
+ *
+ *****************************************************************/
 void mDailySales::on_viewAllMembersButton_clicked()
 {
-    QString year = ui->yearBox->currentText();
-    QString month = ui->monthBox->currentText();
-    QString day = ui->dateBox->currentText();
+    //change to date edit later
+    year = ui->yearBox->currentText();
+    month = ui->monthBox->currentText();
+    day = ui->dateBox->currentText();
 
     QSqlQueryModel *model = new QSqlQueryModel;
     QSqlQuery totalRevenueCalc;
@@ -187,12 +229,24 @@ void mDailySales::on_viewAllMembersButton_clicked()
     ui->salesReportTableView->setModel(model);
 }
 
+/*****************************************************************
+ * METHOD - on_pushButton_clicked
+ * ---------------------------------------------------------------
+ * This method printst the executive member daily sales report
+ * ---------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      The following variables must be declared and initialized:
+ *          year  : Qstring year variable
+ *          month : Qstring month variable
+ *          day   : Qstring day variable
+ * POST-CONDITIONS
+ *
+ *****************************************************************/
 void mDailySales::on_regularMembersView_clicked()
 {
-
-    QString year = ui->yearBox->currentText();
-    QString month = ui->monthBox->currentText();
-    QString day = ui->dateBox->currentText();
+    year = ui->yearBox->currentText();
+    month = ui->monthBox->currentText();
+    day = ui->dateBox->currentText();
 
     QSqlQueryModel *model = new QSqlQueryModel;
 
