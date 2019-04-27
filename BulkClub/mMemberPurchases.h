@@ -20,6 +20,8 @@ public:
     explicit mMemberPurchases(QWidget *parent = nullptr);
     ~mMemberPurchases();
 
+    void defaultReset();
+
 private slots:
     void on_memberIDcomboBox_currentIndexChanged();
     //!< Populates fields based on membership ID change including sale ID, date, item, price, qty
@@ -30,8 +32,17 @@ private slots:
     /*!< POSTCONDITONS: updates date, item, price and qty */
 
 
+    void on_memberNameComboBox_currentIndexChanged();
+    //!< Populates fields based on membership name change including date, item, price, qty
+    /*!< POSTCONDITONS: updates date, item, price and qty */
+
+    void on_resetButton_clicked();
+
 private:
     Ui::mMemberPurchases *ui;
+    bool flag = false; //bool variable to control when index functions change..
+    bool flagName = false;
+    bool flagID = false;
     QSqlDatabase myDB; // Database object for database connection
 };
 
