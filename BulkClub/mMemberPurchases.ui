@@ -299,8 +299,8 @@
      <rect>
       <x>10</x>
       <y>400</y>
-      <width>151</width>
-      <height>16</height>
+      <width>121</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
