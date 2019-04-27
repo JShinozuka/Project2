@@ -6,5 +6,7 @@
         <file>images/poke.png</file>
         <file>images/sandshrewInverted3.jpg</file>
         <file>images/snow.jpg</file>
+        <file>images/sandshrewsnowbg.png</file>
+        <file>images/sandshrewsnowbg2.png</file>
     </qresource>
 </RCC>
