@@ -7,6 +7,7 @@ aInventory::aInventory(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Set connection to database
     myDB = QSqlDatabase::database();
 
     // Populate table with defaultTableView()
@@ -19,6 +20,17 @@ aInventory::~aInventory()
     delete ui;
 }
 
+/****************************************************************************
+ * METHOD - defaultTableView
+ * --------------------------------------------------------------------------
+ * Displays the default table for the inventory database.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aInventory::defaultTableView()
 {
     // POPULATE TABLE with default
@@ -44,6 +56,17 @@ void aInventory::defaultTableView()
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Item Total"));
 }
 
+/****************************************************************************
+ * METHOD - defaultView
+ * --------------------------------------------------------------------------
+ * Displays the default values in elements for Edit and Delete fields.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aInventory::defaultView()
 {
     //POPULATE THE COMBO BOXES with default
@@ -64,6 +87,17 @@ void aInventory::defaultView()
     ui->delNameComboBox->setStyleSheet("QComboBox{background-color: LightBlue;}");
 }
 
+/****************************************************************************
+ * METHOD - on_addItemButton_clicked
+ * --------------------------------------------------------------------------
+ * Adds a new item to inventory database.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aInventory::on_addItemButton_clicked()
 {
     // Initialize variables to insert into inventory database
@@ -77,6 +111,7 @@ void aInventory::on_addItemButton_clicked()
     query.prepare("INSERT INTO InventoryDB(itemName,itemQty,itemTotal) "
                   "VALUES (:itemName, :itemQty, :itemTotal)");
 
+    // Stores new record into database
     query.bindValue(0,itemName);
     query.bindValue(1,itemQty);
     query.bindValue(2,itemTotal);
@@ -86,14 +121,26 @@ void aInventory::on_addItemButton_clicked()
     else
         qDebug()<<("Failed to add new item to inventory database.");
 
+    // Reset default
     ui->addItemNameLine->setText("");
     defaultTableView();
     defaultView();
 }
 
+/****************************************************************************
+ * METHOD - on_editItemButton_clicked
+ * --------------------------------------------------------------------------
+ * Edits an existing item name with new entry.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aInventory::on_editItemButton_clicked()
 {
-    QString currItemName;
+    QString currItemName; // IN - item name user entered
 
     currItemName = ui->currItemNameCombo->currentText();
     itemName = ui->newItemNameLine->text();
@@ -116,6 +163,17 @@ void aInventory::on_editItemButton_clicked()
     defaultView();
 }
 
+/****************************************************************************
+ * METHOD - on_deleteItemButton_clicked
+ * --------------------------------------------------------------------------
+ * Deletes a selected item from database after confirmation.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aInventory::on_deleteItemButton_clicked()
 {
     // Create variable to store the reply from messagebox button click
@@ -126,6 +184,7 @@ void aInventory::on_deleteItemButton_clicked()
                                   "Are you sure you want to delete?",
                                   QMessageBox::Yes|QMessageBox::No);
 
+    // Only deletes if "Yes" is selected from message confirmation
     if(reply == QMessageBox::Yes)
     {
         // Get name of item to be deleted
@@ -142,6 +201,7 @@ void aInventory::on_deleteItemButton_clicked()
         else
             qDebug()<<("Item failed to delete.") << itemName;
     }
+    // Exits delete process if "No" was selected in confirmation
     else
     {
         qDebug() << "Delete was cancelled.";
@@ -152,13 +212,24 @@ void aInventory::on_deleteItemButton_clicked()
     defaultView();
 }
 
+/****************************************************************************
+ * METHOD - on_delNameComboBox_currentIndexChanged
+ * --------------------------------------------------------------------------
+ * Displays default values for the delete item section
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aInventory::on_delNameComboBox_currentIndexChanged()
 {
     // Set to default in case empty
     ui->itemQtyLine->setText("");
     ui->itemTotalRevenueLine->setText("");
 
-    // Get name of current item selected in delete secion
+    // Get name of current item selected in delete section
     itemName = ui->delNameComboBox->currentText();
 
     qDebug() << "Current item name: " << itemName;

@@ -93,6 +93,19 @@ void admin::on_inventoryButton_clicked()
     ui->stackedWidget->setCurrentIndex(3);
 }
 
+/****************************************************************************
+ * METHOD - on_convertMembershipButton_clicked
+ * --------------------------------------------------------------------------
+ * When the convert membership button is clicked, the stackedWidget index
+ * changes to display the convert membership page.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Displays Convert Membership QWidget
+ ***************************************************************************/
 void admin::on_convertMembershipButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);

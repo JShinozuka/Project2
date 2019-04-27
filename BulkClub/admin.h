@@ -44,9 +44,10 @@ private:
     Ui::admin *ui;
 
     aMembership adminMembershipWindow; // Membership window object
-    aSales      aSalesWindow;      // Sales window object
-    aInventory  aInventoryWindow;  // Inventory window object
-    aConvertMembership aConvertMemberWindow; // Convert Membership window object
+    aSales      aSalesWindow;          // Sales window object
+    aInventory  aInventoryWindow;      // Inventory window object
+    aConvertMembership aConvertMemberWindow; // Convert Membership
+                                             // window object
 };
 
 #endif // ADMIN_H

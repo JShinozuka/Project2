@@ -29,7 +29,6 @@ SOURCES += \
     admin.cpp \
     manager.cpp \
     login.cpp \
-    managersales.cpp \
     databasemanger.cpp \
     mMembershipExpire.cpp \
     mDailySales.cpp \
@@ -46,7 +45,6 @@ HEADERS += \
     admin.h \
     manager.h \
     login.h \
-    managersales.h \
     databasemanger.h \
     mMembershipExpire.h \
     mDailySales.h \
@@ -63,7 +61,6 @@ FORMS += \
     admin.ui \
     manager.ui \
     login.ui \
-    managersales.ui \
     mMembershipExpire.ui \
     mDailySales.ui \
     mMemberPurchases.ui \
