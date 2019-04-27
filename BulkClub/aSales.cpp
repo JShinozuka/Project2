@@ -159,6 +159,8 @@ void aSales::on_addSalesButton_clicked()
                          ":membershipNumVar, :itemPurchasedVar, "
                          ":salesPriceVar, :qtyVar)");
 
+        index++;
+
         // Format the sale id with padded 0s as needed
         if(index<=10)
         {
