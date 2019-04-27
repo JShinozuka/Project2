@@ -110,4 +110,3 @@ void manager::on_logoutButton_clicked()
 }
 
 
-

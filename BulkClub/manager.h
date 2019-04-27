@@ -38,9 +38,6 @@ private slots:
     void on_rebateButton_clicked();
     //!< Rebate page is displayed in stacked Widget
 
-    void on_salesButton_clicked();
-    //!< Sales page is displayed in stackedWidget
-
     void on_logoutButton_clicked();
     //!< Manager window closes
 
