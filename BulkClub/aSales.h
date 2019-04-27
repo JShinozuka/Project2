@@ -8,6 +8,8 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QMessageBox>
+#include <QFileDialog>
+#include <QFile>
 
 namespace Ui {
 class aSales;
@@ -27,6 +29,8 @@ public:
 private slots:
     void on_addSalesButton_clicked();
 
+    void on_salesFileButton_clicked();
+
 private:
     Ui::aSales *ui;
 
@@ -43,7 +47,8 @@ private:
     QString saleIDVar = ""; //
     QString itemPurchasedVar, dateVar;
     double salesPriceVar; //sales price
-    double salesTotalVar; // sales price * quantity + tax
+    double salesTotalVar; // sales price * quantity (no tax)
+    double salesWithTaxVar; // salesTotalVar with tax
 
     // Membership DB variables
     double totalAmtSpentVar; // total amount member spent

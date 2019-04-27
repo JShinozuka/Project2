@@ -28,8 +28,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>70</y>
+     <x>10</x>
+     <y>0</y>
      <width>521</width>
      <height>71</height>
     </rect>
@@ -37,8 +37,8 @@
    <property name="font">
     <font>
      <pointsize>16</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -48,10 +48,10 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>140</y>
-     <width>1181</width>
-     <height>491</height>
+     <x>10</x>
+     <y>60</y>
+     <width>891</width>
+     <height>571</height>
     </rect>
    </property>
    <property name="title">
@@ -60,46 +60,46 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>20</y>
-      <width>141</width>
+      <x>10</x>
+      <y>10</y>
+      <width>421</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Upgrade:</string>
+     <string>Recommended Upgrade</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>20</y>
-      <width>101</width>
+      <x>460</x>
+      <y>10</y>
+      <width>421</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Downgrade:</string>
+     <string>Recommended Downgrade</string>
     </property>
    </widget>
    <widget class="QTableView" name="upGradeTable">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>40</y>
-      <width>511</width>
-      <height>451</height>
+      <x>10</x>
+      <y>30</y>
+      <width>421</width>
+      <height>531</height>
      </rect>
     </property>
    </widget>
    <widget class="QTableView" name="downGradeTable">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>40</y>
-      <width>511</width>
-      <height>451</height>
+      <x>460</x>
+      <y>30</y>
+      <width>421</width>
+      <height>531</height>
      </rect>
     </property>
    </widget>

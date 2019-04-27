@@ -46,7 +46,7 @@ void aInventory::defaultTableView()
     ui->inventoryTableView->setModel(model);
 
     // Set Table Column Width
-    ui->inventoryTableView->setColumnWidth(0,200);
+    ui->inventoryTableView->setColumnWidth(0,225);
     ui->inventoryTableView->setColumnWidth(1,100);
     ui->inventoryTableView->setColumnWidth(2,125);
 
@@ -77,10 +77,6 @@ void aInventory::defaultView()
                  "FROM InventoryDB ORDER BY itemName COLLATE NOCASE ASC");
     qry->exec();
     combo->setQuery(*qry);
-
-    // Updating the EDIT item name combo box
-    ui->currItemNameCombo->setModel(combo);
-    ui->currItemNameCombo->setStyleSheet("QComboBox{background-color: LightBlue;}");
 
     // Updating the DELETE item name combo box
     ui->delNameComboBox->setModel(combo);
@@ -123,42 +119,6 @@ void aInventory::on_addItemButton_clicked()
 
     // Reset default
     ui->addItemNameLine->setText("");
-    defaultTableView();
-    defaultView();
-}
-
-/****************************************************************************
- * METHOD - on_editItemButton_clicked
- * --------------------------------------------------------------------------
- * Edits an existing item name with new entry.
- * --------------------------------------------------------------------------
- * PRE-CONDITIONS
- *      No parameters are required.
- *
- * POST-CONDITIONS
- *      ==> Returns nothing.
- ***************************************************************************/
-void aInventory::on_editItemButton_clicked()
-{
-    QString currItemName; // IN - item name user entered
-
-    currItemName = ui->currItemNameCombo->currentText();
-    itemName = ui->newItemNameLine->text();
-
-    qDebug() << currItemName << " and " << itemName;
-
-    QSqlQuery query;
-    query.prepare("UPDATE InventoryDB "
-                  "SET itemName = '"+itemName+"' "
-                  "WHERE itemName = '"+currItemName+"'");
-
-    if(query.exec())
-        qDebug()<<("Item name edit successful.");
-    else
-        qDebug()<<("Item name edit failed.");
-
-    // Reset to default
-    ui->newItemNameLine->setText("");
     defaultTableView();
     defaultView();
 }

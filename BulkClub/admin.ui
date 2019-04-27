@@ -41,17 +41,41 @@
     </rect>
    </property>
    <widget class="QWidget" name="mainPage">
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="adminImage">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>180</y>
-       <width>391</width>
-       <height>171</height>
+       <x>0</x>
+       <y>0</y>
+       <width>1201</width>
+       <height>641</height>
       </rect>
      </property>
      <property name="text">
-      <string>Admin Widget (main Page of stacked widget)</string>
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resource.qrc">:/images/sandshrewsnowbg2.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>555</y>
+       <width>731</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>36</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #3a546b;</string>
+     </property>
+     <property name="text">
+      <string>Welcome Admin!</string>
      </property>
     </widget>
    </widget>
@@ -66,7 +90,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #000080;</string>
+    <string notr="true">background-color: #ecf1f5;</string>
    </property>
    <property name="title">
     <string/>
@@ -229,6 +253,8 @@ border-radius: 5px;</string>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

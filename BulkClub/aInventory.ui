@@ -36,7 +36,7 @@
     <rect>
      <x>10</x>
      <y>50</y>
-     <width>471</width>
+     <width>511</width>
      <height>581</height>
     </rect>
    </property>
@@ -59,11 +59,11 @@
     <string>Inventory Database</string>
    </property>
   </widget>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QGroupBox" name="addGroup">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>60</y>
+     <x>530</x>
+     <y>40</y>
      <width>371</width>
      <height>91</height>
     </rect>
@@ -123,108 +123,11 @@
     </property>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="groupBox_2">
+  <widget class="QGroupBox" name="deleteGroup">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>160</y>
-     <width>371</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Edit Item Name</string>
-   </property>
-   <widget class="QPushButton" name="editItemButton">
-    <property name="geometry">
-     <rect>
-      <x>245</x>
-      <y>85</y>
-      <width>115</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Edit Item</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="currItemNameLabel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>161</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Current Name:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="newItemNameLabel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>131</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>New Name:</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="currItemNameCombo">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>20</y>
-      <width>231</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="newItemNameLine">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>50</y>
-      <width>231</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QGroupBox" name="groupBox_3">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>290</y>
+     <x>530</x>
+     <y>150</y>
      <width>371</width>
      <height>171</height>
     </rect>
@@ -336,6 +239,9 @@
     </property>
    </widget>
    <widget class="QLineEdit" name="itemQtyLine">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -349,6 +255,9 @@
     </property>
    </widget>
    <widget class="QLineEdit" name="itemTotalRevenueLine">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>170</x>

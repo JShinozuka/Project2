@@ -35,8 +35,8 @@ aMembership::~aMembership()
  ***************************************************************************/
 void aMembership::on_addCustomer_clicked()
 {
-   name = ui->name->toPlainText();
-   num= ui->membershipNum->toPlainText();
+   name = ui->name->text();
+   num= ui->membershipNum->text();
    type = ui->membershipTypeBox->currentText();
    totalAmount=  '0';
    rebateAmount= '0';
@@ -155,12 +155,13 @@ void aMembership::on_deleteCustomer_clicked()
                      "ORDER BY customerName ");
      if(model->lastError().isValid())
          qDebug() << model->lastError();
+
      model->setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Membership Number"));
-     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Membership Type"));
-     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Expiration Date"));
-     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Total Amount spent"));
-     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Rebate Amount"));
+     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Member ID#"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Type"));
+     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Expire Date"));
+     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Total Spent"));
+     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Rebate Amt"));
 
     ui->memberDBTable->setModel(model);
  }

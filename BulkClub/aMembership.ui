@@ -31,205 +31,251 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QTableView" name="memberDBTable">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>0</y>
-     <width>1091</width>
-     <height>671</height>
+     <x>10</x>
+     <y>60</y>
+     <width>811</width>
+     <height>571</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>50</y>
+     <width>301</width>
+     <height>191</height>
     </rect>
    </property>
    <property name="title">
-    <string/>
+    <string>Add New Member</string>
    </property>
-   <widget class="QTableView" name="memberDBTable">
+   <widget class="QPushButton" name="addCustomer">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>150</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Customer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>561</width>
-      <height>571</height>
+      <y>30</y>
+      <width>111</width>
+      <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>20</y>
-      <width>491</width>
-      <height>251</height>
+      <x>10</x>
+      <y>60</y>
+      <width>211</width>
+      <height>21</height>
      </rect>
     </property>
-    <property name="title">
-     <string/>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
-    <widget class="QTextEdit" name="name">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>261</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="membershipNum">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>70</y>
-       <width>261</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="addCustomer">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>170</y>
-       <width>261</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Add Customer</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>111</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Name</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>70</y>
-       <width>211</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Membership Number</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>110</y>
-       <width>211</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Membership Type</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>140</y>
-       <width>211</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Expiration Date</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="membershipTypeBox">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>110</y>
-       <width>261</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>Executive</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Regular</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QDateEdit" name="dateEdit">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>140</y>
-       <width>110</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
+    <property name="text">
+     <string>Membership Number</string>
+    </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>280</y>
-      <width>491</width>
-      <height>131</height>
+      <x>10</x>
+      <y>90</y>
+      <width>211</width>
+      <height>21</height>
      </rect>
     </property>
-    <property name="title">
-     <string/>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
-    <widget class="QComboBox" name="customerNameBox">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>40</y>
-       <width>221</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>40</y>
-       <width>151</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Customer Name</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="deleteCustomer">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>80</y>
-       <width>221</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Delete Customer</string>
-     </property>
-    </widget>
+    <property name="text">
+     <string>Membership Type</string>
+    </property>
    </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Expiration Date</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="membershipTypeBox">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>90</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Executive</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Regular</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>120</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name">
+    <property name="geometry">
+     <rect>
+      <x>72</x>
+      <y>30</y>
+      <width>221</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="membershipNum">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>60</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>260</y>
+     <width>301</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Delete a Member</string>
+   </property>
+   <widget class="QComboBox" name="customerNameBox">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>27</y>
+      <width>221</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteCustomer">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete Customer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="warningLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: red;</string>
+    </property>
+    <property name="text">
+     <string>* WARNING: Deleting a member is permanent.</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>601</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Membership Database</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -29,8 +29,6 @@ private slots:
     /*!< itemName  = ui->addItemNameLine->text(); */
     /*!< itemQty   = 0; itemTotal = 0.0 */
 
-    void on_editItemButton_clicked();
-
     void on_deleteItemButton_clicked();
 
     void on_delNameComboBox_currentIndexChanged();
