@@ -9,8 +9,6 @@
 #include "mMemberPurchases.h"
 #include "mRebateInfo.h"
 
-#include "managersales.h"
-
 namespace Ui {
 class manager;
 }
@@ -75,11 +73,6 @@ private:
      * \brief Inventory window object
      */
     mInventory        mInventoryWindow; // IN/OUT- Inventory window object
-    /*!
-     * \var managerSalesWindow
-     * \brief Sales window object
-     */
-    managerSales      managerSalesWindow;   //IN/OUT- Sales window object
 };
 
 #endif // MANAGER_H

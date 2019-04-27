@@ -46,7 +46,7 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>12</x>
@@ -197,33 +197,6 @@ border-radius: 5px;</string>
        </property>
        <property name="text">
         <string>Inventory Info</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="salesButton">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:#ccccff;
-border-style: solid;
-border-color: black;
-border-width: 2px;
-border-radius: 5px;</string>
-       </property>
-       <property name="text">
-        <string>Duplicate?</string>
        </property>
       </widget>
      </item>

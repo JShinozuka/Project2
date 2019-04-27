@@ -14,7 +14,6 @@ manager::manager(QWidget *parent) :
     ui->stackedWidget->insertWidget(3, &mMemberPurchaseWindow);
     ui->stackedWidget->insertWidget(4, &mRebateWindow);
     ui->stackedWidget->insertWidget(5, &mInventoryWindow);
-    ui->stackedWidget->insertWidget(6, &managerSalesWindow);
 }
 
 // Destructor
@@ -91,24 +90,6 @@ void manager::on_rebateButton_clicked()
 void manager::on_inventoryButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
-}
-
-/****************************************************************************
- * METHOD - on_salesButton_clicked
- * --------------------------------------------------------------------------
- * When the sales button is clicked, the stackedWidget index changes to
- * display the sales page.
- * --------------------------------------------------------------------------
- * PRE-CONDITIONS
- *      No parameters are required.
- *
- * POST-CONDITIONS
- *      ==> Returns nothing.
- *      ==> Displays Sales QWidget
- ***************************************************************************/
-void manager::on_salesButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(6);
 }
 
 /****************************************************************************
