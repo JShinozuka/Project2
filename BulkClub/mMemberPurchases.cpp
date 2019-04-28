@@ -41,16 +41,16 @@ mMemberPurchases::mMemberPurchases(QWidget *parent) :
     qDebug() << "MODEL ROW COUNT" << (model->rowCount());
 
     // Set Table Column Width
-    ui->membershipPurchaseTableView->setColumnWidth(0,150);
-    ui->membershipPurchaseTableView->setColumnWidth(1,150);
-    ui->membershipPurchaseTableView->setColumnWidth(2,100);
+    ui->membershipPurchaseTableView->setColumnWidth(0,170);
+    ui->membershipPurchaseTableView->setColumnWidth(1,70);
+    ui->membershipPurchaseTableView->setColumnWidth(2,80);
     ui->membershipPurchaseTableView->setColumnWidth(3,100);
-    ui->membershipPurchaseTableView->setColumnWidth(4,150);
-    ui->membershipPurchaseTableView->setColumnWidth(5,80);
+    ui->membershipPurchaseTableView->setColumnWidth(4,180);
+    ui->membershipPurchaseTableView->setColumnWidth(5,50);
 
     // Set Table Column Header Text
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Memb Name"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Memb #"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID#"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Order ID"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Date"));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Item Purchased"));

@@ -78,6 +78,8 @@ void mDailySales::on_selectDateButton_clicked()
     QSqlQuery numOfExecMembers;
     QSqlQuery numOfRegMembers;
 
+    qDebug() << year << month << day;
+
     model->setQuery("SELECT MembershipDB.customerName, SalesDB.date, "
                     "SalesDB.itemPurchased, SalesDB.quantity, MembershipDB.membershipType "
                     "FROM SalesDB "

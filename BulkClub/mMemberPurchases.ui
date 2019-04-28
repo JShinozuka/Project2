@@ -16,10 +16,10 @@
   <widget class="QTableView" name="membershipPurchaseTableView">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>80</y>
-     <width>731</width>
-     <height>771</height>
+     <x>10</x>
+     <y>70</y>
+     <width>711</width>
+     <height>561</height>
     </rect>
    </property>
    <property name="alternatingRowColors">
@@ -45,13 +45,13 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>80</y>
+      <y>45</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="editable">
      <bool>false</bool>
@@ -61,13 +61,22 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
-      <width>100</width>
+      <y>47</y>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Member ID</string>
@@ -77,13 +86,18 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>320</y>
-      <width>100</width>
+      <y>255</y>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Grand Total</string>
@@ -93,13 +107,13 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>320</y>
+      <y>255</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -109,13 +123,13 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>160</y>
+      <y>115</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -125,13 +139,18 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>160</y>
-      <width>100</width>
+      <y>116</y>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Date</string>
@@ -141,13 +160,13 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>200</y>
+      <y>150</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -157,13 +176,18 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>200</y>
+      <y>152</y>
       <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Item purchased</string>
@@ -173,13 +197,13 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>240</y>
+      <y>185</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -189,13 +213,18 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>240</y>
-      <width>100</width>
+      <y>186</y>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Sale price</string>
@@ -205,13 +234,13 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>280</y>
+      <y>220</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -221,13 +250,18 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>280</y>
-      <width>100</width>
+      <y>222</y>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Quantity</string>
@@ -237,26 +271,31 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>120</y>
+      <y>80</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="MemberIDlabel_6">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>120</y>
-      <width>100</width>
+      <y>82</y>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Order ID</string>
@@ -266,13 +305,13 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>40</y>
+      <y>10</y>
       <width>200</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="editable">
      <bool>false</bool>
@@ -282,13 +321,22 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>40</y>
+      <y>12</y>
       <width>121</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Member Name</string>
@@ -298,57 +346,63 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>400</y>
+      <y>300</y>
       <width>121</width>
-      <height>20</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Reset Search</string>
     </property>
    </widget>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>10</y>
-     <width>731</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: transparent;
-border: 0px;</string>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#5555ff;&quot;&gt;Membership Purchases&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>50</y>
-     <width>1181</width>
-     <height>20</height>
+     <y>40</y>
+     <width>591</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>8</pointsize>
+     <weight>10</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
-    <string>Please select the &quot;reset button&quot; to switch your search by  member name or ID!</string>
+    <string>* Please use the &quot;Reset Search&quot; button to switch search by member name or ID!</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>491</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:blue;</string>
+   </property>
+   <property name="text">
+    <string>Membership Purchases</string>
    </property>
   </widget>
  </widget>

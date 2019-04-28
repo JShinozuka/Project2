@@ -30,8 +30,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1201</width>
-     <height>51</height>
+     <width>1200</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="font">
@@ -49,16 +49,16 @@ font: 75 18pt &quot;Consolas&quot;;
 background: LightBlue</string>
    </property>
    <property name="text">
-    <string>Inventory Information Report</string>
+    <string> Inventory Information Report</string>
    </property>
   </widget>
   <widget class="QTableView" name="inventoryTableView">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>60</y>
-     <width>621</width>
-     <height>601</height>
+     <width>611</width>
+     <height>571</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -74,10 +74,10 @@ background: LightBlue</string>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>50</y>
-     <width>371</width>
-     <height>141</height>
+     <x>630</x>
+     <y>60</y>
+     <width>321</width>
+     <height>105</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -89,14 +89,14 @@ background: LightBlue</string>
    <widget class="QComboBox" name="InventoryComboBox">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>20</y>
+      <x>120</x>
+      <y>10</y>
       <width>190</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="frame">
      <bool>true</bool>
@@ -105,10 +105,10 @@ background: LightBlue</string>
    <widget class="QLineEdit" name="itemQuantityLineEdit">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>60</y>
+      <x>120</x>
+      <y>40</y>
       <width>190</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="readOnly">
@@ -118,10 +118,10 @@ background: LightBlue</string>
    <widget class="QLineEdit" name="itemTotalLineEdit">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>100</y>
+      <x>120</x>
+      <y>70</y>
       <width>190</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="readOnly">
@@ -132,13 +132,22 @@ background: LightBlue</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
+      <y>5</y>
       <width>121</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Item Name</string>
@@ -148,13 +157,22 @@ background: LightBlue</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
+      <y>35</y>
       <width>141</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Item Quantity</string>
@@ -164,13 +182,22 @@ background: LightBlue</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>100</y>
-      <width>141</width>
+      <y>65</y>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Item Total</string>
@@ -190,7 +217,7 @@ background: LightBlue</string>
     <string notr="true">background-image: url(:/images/sandshrewInverted3.jpg);</string>
    </property>
    <property name="text">
-    <string>SANDSHREW LABEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</string>
+    <string/>
    </property>
   </widget>
   <zorder>sandshrewLabel</zorder>
