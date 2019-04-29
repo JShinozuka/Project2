@@ -1,6 +1,7 @@
 #include "aSales.h"
 #include "ui_aSales.h"
 
+// Default constructor
 aSales::aSales(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::aSales)
@@ -14,11 +15,24 @@ aSales::aSales(QWidget *parent) :
     defaultAddSale();
 }
 
+// Destructor
 aSales::~aSales()
 {
     delete ui;
 }
 
+/****************************************************************************
+ * METHOD - defaultSalesTable
+ * --------------------------------------------------------------------------
+ * Displays default sales table to widget
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Displays default sales table
+ ***************************************************************************/
 void aSales::defaultSalesTable()
 {
     //Set Default Table
@@ -50,6 +64,18 @@ void aSales::defaultSalesTable()
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Price"));
 }
 
+/****************************************************************************
+ * METHOD - defaultAddSale
+ * --------------------------------------------------------------------------
+ * Displays default values in the comboBoxes and other elements.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Displays default values in comboBoxes and other elements.
+ ***************************************************************************/
 void aSales::defaultAddSale()
 {
     // Set Default Date
@@ -86,6 +112,19 @@ void aSales::defaultAddSale()
     ui->salesPriceLineEdit->setText("");
 }
 
+/****************************************************************************
+ * METHOD - on_addSalesButton_clicked
+ * --------------------------------------------------------------------------
+ * Adds an individual sales entered into SalesDB.  Includes updating
+ * MembershipDB's total spent and rebate information for that member ID#.
+ * Also updates InventoryDB's quantity and total revenue sale.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aSales::on_addSalesButton_clicked()
 {
     QString salePriceAsTxt = ui->salesPriceLineEdit->text();
@@ -353,6 +392,19 @@ void aSales::on_addSalesButton_clicked()
     }
 }
 
+/****************************************************************************
+ * METHOD - on_salesFileButton_clicked
+ * --------------------------------------------------------------------------
+ * Allows user to select a sales file (.txt) to update SalesDB.  Includes
+ * updating MembershipDB's total spent and rebate information for that
+ * member ID#. Also updates InventoryDB's quantity and total revenue sale.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
 void aSales::on_salesFileButton_clicked()
 {
     QString idPrefix;

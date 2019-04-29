@@ -1,6 +1,7 @@
 #include "aInventory.h"
 #include "ui_aInventory.h"
 
+// Default constructor
 aInventory::aInventory(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::aInventory)
@@ -15,6 +16,7 @@ aInventory::aInventory(QWidget *parent) :
     defaultView();
 }
 
+// Destructor
 aInventory::~aInventory()
 {
     delete ui;

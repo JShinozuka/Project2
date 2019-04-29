@@ -20,8 +20,11 @@ class aInventory : public QWidget
 public:
     explicit aInventory(QWidget *parent = nullptr);
     ~aInventory();
+
     void defaultTableView();
+    //!< Displays default table
     void defaultView();
+    //!< Displays default values in add and delete groups
 
 private slots:
     void on_addItemButton_clicked();
@@ -30,8 +33,10 @@ private slots:
     /*!< itemQty   = 0; itemTotal = 0.0 */
 
     void on_deleteItemButton_clicked();
+    //!< Deletes an item from the InventoryDB
 
     void on_delNameComboBox_currentIndexChanged();
+    //!< Updates information in the delete group when index is changed
 
 private:
     Ui::aInventory *ui;
