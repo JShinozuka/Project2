@@ -23,6 +23,8 @@ public:
 
 private slots:
     void on_InventoryComboBox_currentIndexChanged();
+    //!< Displays fields based on selected item name.
+    /*!< POSTCONDITONS: Item qty and item total fields are displayed in text edits */
 
 private:
     Ui::mInventory *ui;

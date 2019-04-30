@@ -6,7 +6,7 @@
  * --------------------------------------------------------------------------
  * Displays Manager Member Purchase Table and populates the line edit fields for
  * membership number, saleID, date, item purchased, quantity ordered by
- * Membership number.
+ * Membership number by calling the default reset function.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
  *      Database class created to connect to data base.
@@ -14,6 +14,7 @@
  * POST-CONDITIONS
  *      ==> Populates line edit fields
  ***************************************************************************/
+
 mMemberPurchases::mMemberPurchases(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::mMemberPurchases)
@@ -24,13 +25,56 @@ mMemberPurchases::mMemberPurchases(QWidget *parent) :
 
     myDB = QSqlDatabase::database();
 
+    defaultReset();
+
+
+   }
+
+/****************************************************************************
+ * DESTRUCTOR
+ * --------------------------------------------------------------------------
+ * DELETES ui
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      ui exists
+ *
+ * POST-CONDITIONS
+ *      ==> Deletes ui
+ ***************************************************************************/
+
+mMemberPurchases::~mMemberPurchases()
+{
+    delete ui;
+}
+
+/****************************************************************************
+ * defaultReset
+ * --------------------------------------------------------------------------
+ * This function populates the table view with the customer name, membership number,
+ * sales ID, sales date and the item purchased pulling data from the Membership table
+ * as well as the sales table in our bulk club database. It sorts by member ID by default.
+ * This function also populates all the combo boxes, one for the member's name, one
+ * for the member's id and one for the member's orders.
+ *
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      ui exists, database exists & data fields populated for membership and sales tables.
+ *
+ * POST-CONDITIONS
+ *      ==> Table view populates (ordered by memberID), combo boxes populate.
+ ***************************************************************************/
+
+void mMemberPurchases::defaultReset()
+{
+
     QSqlQueryModel *model = new QSqlQueryModel;
 
 
     model->setQuery("SELECT MembershipDB.customerName, SalesDB.membershipNum, SalesDB.SaleID, SalesDB.date, SalesDB.itemPurchased, "
                     "SalesDB.quantity "
                     "FROM MembershipDB "
-                    "INNER JOIN SalesDB ON SalesDB.membershipNum = MembershipDB.membershipNumber ");
+                    "INNER JOIN SalesDB ON SalesDB.membershipNum = MembershipDB.membershipNumber "
+                    "ORDER BY SalesDB.membershipNum ASC");
 
 
     if(model->lastError().isValid())
@@ -57,31 +101,6 @@ mMemberPurchases::mMemberPurchases(QWidget *parent) :
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Qty"));
 
 
-    defaultReset();
-
-
-   }
-
-/****************************************************************************
- * DESTRUCTOR
- * --------------------------------------------------------------------------
- * DELETES ui
- * --------------------------------------------------------------------------
- * PRE-CONDITIONS
- *      ui exists
- *
- * POST-CONDITIONS
- *      ==> Deletes ui
- ***************************************************************************/
-mMemberPurchases::~mMemberPurchases()
-{
-    delete ui;
-}
-
-
-void mMemberPurchases::defaultReset()
-{
-
     flag = false; // when it first executes flag should be false so other index changing functions do not get called.
 
     //POPULATE THE COMBO BOXES
@@ -102,7 +121,6 @@ void mMemberPurchases::defaultReset()
     ui->memberIDcomboBox->setCurrentIndex(-1); // Show first entry blank
 
     //Populate order id combo boxes
-    //QSqlQuery * qry2 = new QSqlQuery(myDB);
     QSqlQueryModel * combo2 = new QSqlQueryModel();
     QString membID = ui->memberIDcomboBox->currentText();
     qDebug() << "membID: " << membID;
@@ -118,7 +136,6 @@ void mMemberPurchases::defaultReset()
     ui->orderIDcomboBox->setCurrentIndex(-1); // Show first entry blank
 
     //populate member name combo boxes
-
     QSqlQuery * qry3 = new QSqlQuery(myDB);
     QSqlQueryModel * combo3 = new QSqlQueryModel();
     qry3->prepare("SELECT DISTINCT customerName "
@@ -147,16 +164,17 @@ void mMemberPurchases::defaultReset()
 /****************************************************************************
  * on_memberIDcomboBox_currentIndexChanged()
  * --------------------------------------------------------------------------
- * Changes line edit fields (salesID, item purchased, salePrice, quantity
- * based on memberID selected)
+ * Changes line edit fields (salesID, item purchased, salePrice, quantity)
+ * based on memberID selected. Also updates the member name to match member id.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
- *      line edit fields created, salesID combo created.
+ *      line edit fields created, salesID and member name combo boxes created.
  *
  * POST-CONDITIONS
  *      ==> populates line edit fields (salesID, item purchased, salePrice, quantity
- * based on memberID selected)
+ * based on memberID selected). Updates member name combo box to match id.
  ***************************************************************************/
+
 void mMemberPurchases::on_memberIDcomboBox_currentIndexChanged()
 {
     flagID = true; //change flag while function works.
@@ -277,10 +295,11 @@ void mMemberPurchases::on_memberIDcomboBox_currentIndexChanged()
  * on_orderIDcomboBox_currentIndexChanged()
  * --------------------------------------------------------------------------
  * Changes line edit fields (salesID, item purchased, salePrice, quantity
- * based on orderID selected)
+ * based on orderID selected). OrderID can only be selected after a member
+ * is selected by either id or name.
  * --------------------------------------------------------------------------
  * PRE-CONDITIONS
- *      line edit fields created, memberID & salesID combo boxes created.
+ *      line edit fields created, memberID/member name & salesID combo boxes created.
  *
  * POST-CONDITIONS
  *      ==> populates line edit fields (item purchased, salePrice, quantity
@@ -357,6 +376,20 @@ void mMemberPurchases::on_orderIDcomboBox_currentIndexChanged()
     }
 }
 
+
+/****************************************************************************
+ * on_memberNameComboBox_currentIndexChanged()
+ * --------------------------------------------------------------------------
+ * Changes line edit fields (salesID, item purchased, salePrice, quantity)
+ * based on member name selected. Also changes member id to match member name.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      line edit fields created, memberID, member name & salesID combo boxes created.
+ *
+ * POST-CONDITIONS
+ *      ==> populates line edit fields (item purchased, salePrice, quantity
+ * based on orderID selected)& updates memberID combo box to match.
+ ***************************************************************************/
 
 void mMemberPurchases::on_memberNameComboBox_currentIndexChanged()
 {
@@ -473,6 +506,20 @@ void mMemberPurchases::on_memberNameComboBox_currentIndexChanged()
     flagName = false; //assign flagName back to false so id index change can still change the index of customerName.
 
 }
+
+/****************************************************************************
+ * on_resetButton_clicked()
+ * --------------------------------------------------------------------------
+ * This function calls the defaultReset() function to clear all line edits and
+ * restore all combo boxes to their default values (starting with a blank selection
+ * screen).
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      line edit fields created, memberID, member name & salesID combo boxes created.
+ *
+ * POST-CONDITIONS
+ *      ==> restores line edits and combo boxes to default.
+ ***************************************************************************/
 
 void mMemberPurchases::on_resetButton_clicked()
 {

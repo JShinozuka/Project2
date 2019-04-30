@@ -1,6 +1,21 @@
 #include "mInventory.h"
 #include "ui_mInventory.h"
 
+/****************************************************************************
+ * CONSTRUCTOR
+ * --------------------------------------------------------------------------
+ * Displays Inventory Information Report Table and populates the item name
+ * combo box.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      Database class created to connect to data base. Combo box & line edits
+ * created.
+ *
+ * POST-CONDITIONS
+ *      ==> Populates table view and combo box.
+ ***************************************************************************/
+
+
 mInventory::mInventory(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::mInventory)
@@ -37,8 +52,7 @@ mInventory::mInventory(QWidget *parent) :
 
 
 
-    //POPULATE THE COMBO BOXES
-
+    //POPULATE THE item name combo box
     QSqlQuery * qry = new QSqlQuery(myDB);
 
     QSqlQueryModel * combo = new QSqlQueryModel();
@@ -54,27 +68,6 @@ mInventory::mInventory(QWidget *parent) :
 
     ui->InventoryComboBox->setStyleSheet("QComboBox { background-color: LightBlue; }");
 
-    /*
-    //QSqlQuery * qry2 = new QSqlQuery(myDB);
-    QSqlQueryModel * combo2 = new QSqlQueryModel();
-
-
-
-    //changed today 4/7/19 - CL
-    QString membID = ui->memberIDcomboBox->currentText();
-    qDebug() << "membID: " << membID;
-    qry->prepare("SELECT saleID "
-                  "FROM SalesDB "
-                  "WHERE membershipNum = '"+membID+"' "
-                  "ORDER BY saleID COLLATE NOCASE ASC" );
-    qry->exec();
-
-    combo2->setQuery(*qry);
-
-    ui->orderIDcomboBox->setModel(combo2);
-
-*/
-
 }
 
 mInventory::~mInventory()
@@ -82,7 +75,18 @@ mInventory::~mInventory()
     delete ui;
 }
 
-
+/****************************************************************************
+ * on_InventoryComboBox_currentIndexChanged()
+ * --------------------------------------------------------------------------
+ * Updates line edit fields (item quantity & item total)
+ * based on inventory item name selected.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      line edit fields created, item name combo box created.
+ *
+ * POST-CONDITIONS
+ *      ==> populates line edit fields (item quantity & item total).
+ ***************************************************************************/
 
 void mInventory::on_InventoryComboBox_currentIndexChanged()
 {
