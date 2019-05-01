@@ -155,13 +155,13 @@ void aSales::on_addSalesButton_clicked()
         yearVar  = ui->dateEdit->date().year();
         dateVar  = ui->dateEdit->date().toString("MM/dd/yyyy");
 
-        qDebug() << monthVar << " " << dayVar << " " << yearVar << " is: "
-                 << dateVar;
+//        qDebug() << monthVar << " " << dayVar << " " << yearVar << " is: "
+//                 << dateVar;
 
         // Get and convert membership number from field to int
         QString memNumAsTxt = ui->memberIDComboBox->currentText();
         membershipNumVar = QVariant(memNumAsTxt).toInt();
-        qDebug() << "membershipNumVar: " << membershipNumVar;
+//        qDebug() << "membershipNumVar: " << membershipNumVar;
 
         // Get item name
         itemPurchasedVar = ui->itemNameComboBox->currentText();
@@ -189,7 +189,7 @@ void aSales::on_addSalesButton_clicked()
             index++;
         }
 
-        qDebug() << "New sale index: " << index;
+//        qDebug() << "New sale index: " << index;
 
         // ADD NEW SALE to sales database
         QSqlQuery * saleQry = new QSqlQuery(myDB);
@@ -242,9 +242,9 @@ void aSales::on_addSalesButton_clicked()
             // Shows value of variables that should be saved
             qDebug() << "Variables that were successfully saved: \n";
             qDebug() << "Sale ID: "    << saleIDVar;
-            qDebug() << "month: " << monthVar;
-            qDebug() << "day: "    << dayVar;
-            qDebug() << "year: " << yearVar;
+//            qDebug() << "month: " << monthVar;
+//            qDebug() << "day: "    << dayVar;
+//            qDebug() << "year: " << yearVar;
             qDebug() << "date:  "    << dateVar;
             qDebug() << "membership number: " << membershipNumVar;
             qDebug() << "item purchased: "  << itemPurchasedVar;
@@ -267,11 +267,11 @@ void aSales::on_addSalesButton_clicked()
         // CALCULATE and UPDATE sales total in membership datebase
         // Item sale price * qty (for the new sale)
         salesTotalVar = (salesPriceVar * qtyVar);
-        qDebug() << "salesTotalVar" << salesTotalVar;
+//        qDebug() << "salesTotalVar" << salesTotalVar;
 
         // Sale amount with tax
         salesWithTaxVar = (salesTotalVar*TAX_RATE_VAR)+salesTotalVar;
-        qDebug() << "total amount spent var" << salesWithTaxVar;
+//        qDebug() << "total amount spent var" << salesWithTaxVar;
 
         // Locate member in membership database
         QSqlQuery qry;
@@ -286,7 +286,7 @@ void aSales::on_addSalesButton_clicked()
             {
                 // Get memberhsip type
                 memberType = qry.value(2).toString();
-                qDebug() << "memberType: " << memberType;
+//                qDebug() << "memberType: " << memberType;
             }
         }
         else
@@ -304,8 +304,8 @@ void aSales::on_addSalesButton_clicked()
                 {
                     // rebate = current rebate value + (sale total * rebate rate)
                     rebateVar = (qry.value(8).toDouble()+(salesTotalVar*REBATE_RATE_VAR));
-                    qDebug() << "RebateVar: " << rebateVar;
-                    qDebug() << "Query Rebate: " << qry.value(8).toDouble();
+//                    qDebug() << "RebateVar: " << rebateVar;
+//                    qDebug() << "Query Rebate: " << qry.value(8).toDouble();
                 }
                 // If regular member rebate value should not change
                 else
@@ -322,8 +322,8 @@ void aSales::on_addSalesButton_clicked()
             {
                 // rebate = current rebate value + (sale total * rebate rate)
                 totalAmtSpentVar = (qry.value(7).toDouble()+(salesWithTaxVar));
-                qDebug() << "totalAmtSpentVar: " << totalAmtSpentVar;
-                qDebug() << "TOTAL Amount Spent qry.7: " << qry.value(7).toDouble();
+//                qDebug() << "totalAmtSpentVar: " << totalAmtSpentVar;
+//                qDebug() << "TOTAL Amount Spent qry.7: " << qry.value(7).toDouble();
             }
         }
 
@@ -367,7 +367,8 @@ void aSales::on_addSalesButton_clicked()
                 qDebug() << "Updated item Qty: " << itemQty;
 
                 // salesTotalVar = (item price * qty);  (tax not included)
-                itemTotal = (inventoryQry.value(2).toInt() + salesTotalVar);
+                itemTotal = (inventoryQry.value(2).toDouble() + salesTotalVar);
+                qDebug() << "inventoryQry.value2 " << inventoryQry.value(2).toInt();
                 qDebug() << "Updated item Total: " << itemTotal;
             }
         }
@@ -377,6 +378,7 @@ void aSales::on_addSalesButton_clicked()
         QString itemTotalAsString;
         itemQtyAsString = (QVariant(itemQty).toString());
         itemTotalAsString = (QVariant(itemTotal).toString());
+        qDebug() << itemQtyAsString << " " << itemTotalAsString;
 
         // UPDATE inventory database all fields
         QSqlQuery inventoryQry2;
@@ -442,7 +444,7 @@ void aSales::on_salesFileButton_clicked()
     // Continue to get new records from file until end
     while(!line.isNull())
     {
-        qDebug() << "index is " << index;
+//        qDebug() << "index is " << index;
 
         index++;
 
@@ -468,13 +470,13 @@ void aSales::on_salesFileButton_clicked()
         // Parse date xx/xx/xxxx format to MM DD YYYY variables
         QStringRef monthString(&dateVar, 0, 2);
         monthVar = monthString.toInt();
-        qDebug() << "parsed MM: " << monthVar;
+//        qDebug() << "parsed MM: " << monthVar;
         QStringRef dayString(&dateVar, 3, 2);
         dayVar = dayString.toInt();
-                qDebug() << "parsed DD: " << dayVar;
+//                qDebug() << "parsed DD: " << dayVar;
         QStringRef yearString(&dateVar, 6, 4);
         yearVar = yearString.toInt();
-                qDebug() << "parsed YYYY: " << yearVar;
+//                qDebug() << "parsed YYYY: " << yearVar;
 
         // Read next line from file
         line = in.readLine();
@@ -530,8 +532,6 @@ void aSales::on_salesFileButton_clicked()
         qDebug() << "Item Price: "    << salesPriceVar;
         qDebug() << "Item Quantity: " << qtyVar;
 
-
-
         /********************************************************************
          * UPDATE MEMBERSHIP DB - total spent and rebate
          *******************************************************************/
@@ -542,11 +542,11 @@ void aSales::on_salesFileButton_clicked()
         // CALCULATE and UPDATE sales total in membership datebase
         // Item sale price * qty (for the new sale)
         salesTotalVar = (salesPriceVar * qtyVar);
-        qDebug() << "salesTotalVar" << salesTotalVar;
+        qDebug() << "Item sale price * qty (no tax): " << salesTotalVar;
 
         // Sale amount with tax
         salesWithTaxVar = (salesTotalVar*TAX_RATE_VAR)+salesTotalVar;
-        qDebug() << "total amount spent var" << salesWithTaxVar;
+        qDebug() << "(sales total * tax) + previous: " << salesWithTaxVar;
 
         // Locate member in membership database
         QSqlQuery qry;
@@ -642,7 +642,7 @@ void aSales::on_salesFileButton_clicked()
                 qDebug() << "Updated item Qty: " << itemQty;
 
                 // salesTotalVar = (item price * qty);  (tax not included)
-                itemTotal = (inventoryQry.value(2).toInt() + salesTotalVar);
+                itemTotal = (inventoryQry.value(2).toDouble() + salesTotalVar);
                 qDebug() << "Updated item Total: " << itemTotal;
             }
         }
@@ -664,8 +664,6 @@ void aSales::on_salesFileButton_clicked()
             qDebug()<<("Inventory database successfully updated");
         else
             qDebug()<<("FAIL: Can't update inventory database.");
-
-
 
         // Get next line
         line = in.readLine();
