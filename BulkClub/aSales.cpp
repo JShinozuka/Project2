@@ -131,9 +131,13 @@ void aSales::on_addSalesButton_clicked()
     double salePriceAsDouble = QVariant(salePriceAsTxt).toDouble();
 
     // Checks for empty fields
-    if (ui->memberIDComboBox->currentText() == "" || ui->itemNameComboBox->currentText() == "" || ui->qtySpinBox->value()== 0 || ui->salesPriceLineEdit->text() == "")
+    if (ui->memberIDComboBox->currentText() == "" || ui->itemNameComboBox->currentText() == "" ||  ui->salesPriceLineEdit->text() == "")
     {
         QMessageBox::information(this, "Empty Fields","Please enter all fields!",QMessageBox::Ok);
+    }
+    else if(ui->qtySpinBox->value()== 0)
+    {
+        QMessageBox::information(this, "Invalid entry","Please enter a quantity greater than 0.",QMessageBox::Ok);
     }
     // Checks if sale price is 0.00
     else if(salePriceAsDouble <= 0)

@@ -21,6 +21,12 @@ aMembership::~aMembership()
     delete ui;
 }
 
+void aMembership::reset()
+{
+    displayDefaultTable();
+    updateComboBox();
+}
+
 /****************************************************************************
  * METHOD - on_addCustomer_clicked()
  * --------------------------------------------------------------------------

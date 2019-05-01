@@ -115,9 +115,20 @@ void aInventory::on_addItemButton_clicked()
     query.bindValue(2,itemTotal);
 
     if(query.exec())
+    {
         qDebug()<<("New item added to inventory database.");
+    }
     else
+    {
         qDebug()<<("Failed to add new item to inventory database.");
+        if(query.lastError().isValid())
+        {
+            QMessageBox::warning(this, "Unable to Add Item",
+                                       "Please enter a unique item name.",
+                                          QMessageBox::Ok);
+        }
+//        qDebug() << query.lastError();
+    }
 
     // Reset default
     ui->addItemNameLine->setText("");

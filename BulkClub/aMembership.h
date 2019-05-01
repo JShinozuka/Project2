@@ -33,6 +33,8 @@ public:
 
     ~aMembership();
 
+    void reset();
+
 private slots:
     /*!
      * \brief on_addCustomer_clicked

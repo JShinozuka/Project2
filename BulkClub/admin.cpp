@@ -55,6 +55,7 @@ void admin::on_homeButton_clicked()
 void admin::on_membershipButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    adminMembershipWindow.reset();
 }
 
 /****************************************************************************
@@ -73,6 +74,8 @@ void admin::on_membershipButton_clicked()
 void admin::on_salesButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+    aSalesWindow.defaultSalesTable();
+    aSalesWindow.defaultAddSale();
 }
 
 /****************************************************************************
@@ -91,6 +94,8 @@ void admin::on_salesButton_clicked()
 void admin::on_inventoryButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+    aInventoryWindow.defaultView();
+    aInventoryWindow.defaultTableView();
 }
 
 /****************************************************************************
@@ -109,6 +114,8 @@ void admin::on_inventoryButton_clicked()
 void admin::on_convertMembershipButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
+    aConvertMemberWindow.displayUpGradeTable();
+    aConvertMemberWindow.displayDownGradeTable();
 }
 
 /****************************************************************************
