@@ -335,10 +335,18 @@ void aSales::on_addSalesButton_clicked()
 
         // UPDATE membership database total amount spent and rebate fields
         QSqlQuery memberQry;
-        memberQry.prepare("UPDATE MembershipDB "
+/*        memberQry.prepare("UPDATE MembershipDB "
                           "SET totalAmountSpent = '"+totalAmountAsString+"', "
                           "rebateAmount = '"+rebateAsString+"' "
                           "WHERE membershipNumber = '"+memNumAsTxt+"'");
+*/
+        memberQry.prepare("UPDATE MembershipDB "
+                          "SET totalAmountSpent=:totalAmountSpent, "
+                          "rebateAmount=:rebateAmount "
+                          "WHERE membershipNumber=:membershipNumber");
+        memberQry.bindValue(":totalSpent", QString::number(totalAmtSpentVar, 'f', 2));
+        memberQry.bindValue(":rebateAmount", QString::number(rebateVar, 'f', 2));
+        memberQry.bindValue(":membershipNumber", memNumAsTxt);
 
         // STORE totalAmountSpent and rebateAmount into MembershipDB
         if(memberQry.exec())
@@ -381,11 +389,19 @@ void aSales::on_addSalesButton_clicked()
         qDebug() << itemQtyAsString << " " << itemTotalAsString;
 
         // UPDATE inventory database all fields
-        QSqlQuery inventoryQry2;
+/*        QSqlQuery inventoryQry2;
         inventoryQry2.prepare("UPDATE InventoryDB "
                               "SET itemQty = '"+itemQtyAsString+"', "
                               "itemTotal = '"+itemTotalAsString+"' "
                               "WHERE itemName = '"+itemPurchasedVar+"'");
+*/
+        QSqlQuery inventoryQry2;
+        inventoryQry2.prepare("UPDATE InventoryDB "
+                              "SET itemQty=:itemQty, itemTotal=:itemTotal "
+                              "WHERE itemName=:itemName");
+        inventoryQry2.bindValue(":itemName", itemPurchasedVar);
+        inventoryQry2.bindValue(":itemQty", itemQtyAsString);
+        inventoryQry2.bindValue(":itemTotal", QString::number(itemTotal, 'f', 2));
 
         if(inventoryQry2.exec())
             qDebug()<<("Inventory database successfully updated");
@@ -611,9 +627,12 @@ void aSales::on_salesFileButton_clicked()
         // UPDATE membership database total amount spent and rebate fields
         QSqlQuery memberQry;
         memberQry.prepare("UPDATE MembershipDB "
-                          "SET totalAmountSpent = '"+totalAmountAsString+"', "
-                          "rebateAmount = '"+rebateAsString+"' "
-                          "WHERE membershipNumber = '"+memNumAsTxt+"'");
+                          "SET totalAmountSpent=:totalAmountSpent, "
+                          "rebateAmount=:rebateAmount "
+                          "WHERE membershipNumber=:membershipNumber");
+        memberQry.bindValue(":totalSpent", QString::number(totalAmtSpentVar, 'f', 2));
+        memberQry.bindValue(":rebateAmount", QString::number(rebateVar, 'f', 2));
+        memberQry.bindValue(":membershipNumber", memNumAsTxt);
 
         // STORE totalAmountSpent and rebateAmount into MembershipDB
         if(memberQry.exec())
@@ -656,9 +675,11 @@ void aSales::on_salesFileButton_clicked()
         // UPDATE inventory database all fields
         QSqlQuery inventoryQry2;
         inventoryQry2.prepare("UPDATE InventoryDB "
-                              "SET itemQty = '"+itemQtyAsString+"', "
-                              "itemTotal = '"+itemTotalAsString+"' "
-                              "WHERE itemName = '"+itemPurchasedVar+"'");
+                              "SET itemQty=:itemQty, itemTotal=:itemTotal "
+                              "WHERE itemName=:itemName");
+        inventoryQry2.bindValue(":itemName", itemPurchasedVar);
+        inventoryQry2.bindValue(":itemQty", itemQtyAsString);
+        inventoryQry2.bindValue(":itemTotal", QString::number(itemTotal, 'f', 2));
 
         if(inventoryQry2.exec())
             qDebug()<<("Inventory database successfully updated");
