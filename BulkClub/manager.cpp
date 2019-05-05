@@ -1,5 +1,6 @@
 #include "manager.h"
 #include "ui_manager.h"
+#include "login.h"
 
 // Default Constructor
 manager::manager(QWidget *parent) :
@@ -8,12 +9,22 @@ manager::manager(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    namePtr=nullptr; // initialize user name pointer to null
+
     // Create a stacked widget index for seperate QWidget pages
     ui->stackedWidget->insertWidget(1, &mMembershipExpireWindow);
     ui->stackedWidget->insertWidget(2, &mDailySalesWindow);
     ui->stackedWidget->insertWidget(3, &mMemberPurchaseWindow);
     ui->stackedWidget->insertWidget(4, &mRebateWindow);
     ui->stackedWidget->insertWidget(5, &mInventoryWindow);
+
+    login temp; // temp variable to store the user name
+    QString name = temp.returnName(); //"Welcome SandShrews Yo!";
+
+    namePtr = new userName(name);
+    userName * current = new userName(*namePtr);
+    ui->managerUserNameLabel->setText(current->getName());
+
 }
 
 // Destructor
@@ -38,6 +49,7 @@ manager::~manager()
 void manager::on_homeButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+
 }
 
 /****************************************************************************

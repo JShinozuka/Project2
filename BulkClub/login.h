@@ -39,6 +39,12 @@ public:
      */
     void connectToDB();
 
+    /*!
+     * \brief return QString UserName
+     * returns the manager's username when called
+     */
+    QString returnName();
+
 private slots:
     /*!
      * \brief on_loginManagerButton_clicked
@@ -73,6 +79,7 @@ private slots:
      * \param arg1
      */
     void on_passwordLineEdit_textChanged(const QString &arg1);
+
 
 private:
     /*!
@@ -120,6 +127,7 @@ private:
      * \brief Database object for database connection
      */
     databaseManger myDB;
-};
+
+ };
 
 #endif // LOGIN_H

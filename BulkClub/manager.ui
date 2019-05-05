@@ -274,6 +274,19 @@ border-radius: 5px;</string>
       <string>Welcome Manager!</string>
      </property>
     </widget>
+    <widget class="QLabel" name="managerUserNameLabel">
+     <property name="geometry">
+      <rect>
+       <x>1000</x>
+       <y>620</y>
+       <width>201</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>I'm here</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

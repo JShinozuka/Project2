@@ -8,6 +8,7 @@
 #include "mInventory.h"
 #include "mMemberPurchases.h"
 #include "mRebateInfo.h"
+#include "username.h"
 
 namespace Ui {
 class manager;
@@ -70,6 +71,12 @@ private:
      * \brief Inventory window object
      */
     mInventory        mInventoryWindow; // IN/OUT- Inventory window object
+
+    /*!
+     * \var namePtr
+     * \brief pointer to point to userName object (to demonstrate copy constructor)
+     */
+    userName * namePtr;
 };
 
 #endif // MANAGER_H
