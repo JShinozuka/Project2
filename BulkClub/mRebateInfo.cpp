@@ -44,7 +44,7 @@ void mRebateInfo::displayDefaultRebateTable() const
 
     // Define query model
     model->setQuery("SELECT membershipNumber, customerName, "
-                    "rebateAmount "
+                    "CAST(rebateAmount AS DECIMAL(3,2)) "
                     "FROM MembershipDB "
                     "WHERE membershipType = 'Executive' "
                     "ORDER BY membershipNumber ASC");

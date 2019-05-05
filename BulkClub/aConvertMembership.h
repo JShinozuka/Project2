@@ -26,7 +26,9 @@ class aConvertMembership : public QWidget
 
 public:
     /*!
-     * \brief aConvertMembership
+     * \brief default constructor
+     * It will check and see which regular members should be upgraded and which executive members should be downgraded
+     * and display them in separate table views.
      * \param parent
      */
     explicit aConvertMembership(QWidget *parent = nullptr);
@@ -37,12 +39,12 @@ public:
     ~aConvertMembership();
 
     /*!
-     * \brief displayUpGradeTable
+     * \brief displayUpGradeTable shows the regular members that should be upgraded
      */
     void displayUpGradeTable() const;
 
     /*!
-     * \brief displayDownGradeTable
+     * \brief displayDownGradeTable shows the executive members that should be downgraded
      */
     void displayDownGradeTable() const;
 

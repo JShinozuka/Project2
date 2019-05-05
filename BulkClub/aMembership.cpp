@@ -47,7 +47,6 @@ void aMembership::on_addCustomer_clicked()
    totalAmount=  '0';
    rebateAmount= '0';
 
-
    month = ui->dateEdit->date().month();
    day = ui->dateEdit->date().day();
    year = ui->dateEdit->date().year();
@@ -85,9 +84,20 @@ void aMembership::on_addCustomer_clicked()
 
 
    if(qry5->exec())
+   {
           qDebug()<<("added");
-  else
+   }
+   else
+   {
       qDebug()<<("add failed");
+
+      qDebug()<<("add failed");
+      QMessageBox::information(this, "Error Add Failed",
+                "Please make sure all fields are added and the member ID is unique!",
+                QMessageBox::Ok);
+    }
+
+
    displayDefaultTable();
    updateComboBox();
    ui->name->clear();
