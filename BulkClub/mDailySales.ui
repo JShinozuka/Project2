@@ -339,28 +339,8 @@
      </font>
     </property>
     <property name="currentText">
-     <string>2015</string>
+     <string>2019</string>
     </property>
-    <item>
-     <property name="text">
-      <string>2015</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>2016</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>2017</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>2018</string>
-     </property>
-    </item>
     <item>
      <property name="text">
       <string>2019</string>
