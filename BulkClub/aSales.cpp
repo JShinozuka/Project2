@@ -322,8 +322,8 @@ void aSales::on_addSalesButton_clicked()
             {
                 // rebate = current rebate value + (sale total * rebate rate)
                 totalAmtSpentVar = (qry.value(7).toDouble()+(salesWithTaxVar));
-//                qDebug() << "totalAmtSpentVar: " << totalAmtSpentVar;
-//                qDebug() << "TOTAL Amount Spent qry.7: " << qry.value(7).toDouble();
+                qDebug() << "totalAmtSpentVar: " << totalAmtSpentVar;
+                qDebug() << "TOTAL Amount Spent qry.7: " << qry.value(7).toDouble();
             }
         }
 
@@ -335,16 +335,11 @@ void aSales::on_addSalesButton_clicked()
 
         // UPDATE membership database total amount spent and rebate fields
         QSqlQuery memberQry;
-/*        memberQry.prepare("UPDATE MembershipDB "
-                          "SET totalAmountSpent = '"+totalAmountAsString+"', "
-                          "rebateAmount = '"+rebateAsString+"' "
-                          "WHERE membershipNumber = '"+memNumAsTxt+"'");
-*/
         memberQry.prepare("UPDATE MembershipDB "
                           "SET totalAmountSpent=:totalAmountSpent, "
                           "rebateAmount=:rebateAmount "
                           "WHERE membershipNumber=:membershipNumber");
-        memberQry.bindValue(":totalSpent", QString::number(totalAmtSpentVar, 'f', 2));
+        memberQry.bindValue(":totalAmountSpent", QString::number(totalAmtSpentVar, 'f', 2));
         memberQry.bindValue(":rebateAmount", QString::number(rebateVar, 'f', 2));
         memberQry.bindValue(":membershipNumber", memNumAsTxt);
 
@@ -618,19 +613,13 @@ void aSales::on_salesFileButton_clicked()
             }
         }
 
-        // Convert variables to be stored into database
-        QString totalAmountAsString;
-        QString rebateAsString;
-        totalAmountAsString = (QVariant(totalAmtSpentVar).toString());
-        rebateAsString = (QVariant(rebateVar).toString());
-
         // UPDATE membership database total amount spent and rebate fields
         QSqlQuery memberQry;
         memberQry.prepare("UPDATE MembershipDB "
                           "SET totalAmountSpent=:totalAmountSpent, "
                           "rebateAmount=:rebateAmount "
                           "WHERE membershipNumber=:membershipNumber");
-        memberQry.bindValue(":totalSpent", QString::number(totalAmtSpentVar, 'f', 2));
+        memberQry.bindValue(":totalAmountSpent", QString::number(totalAmtSpentVar, 'f', 2));
         memberQry.bindValue(":rebateAmount", QString::number(rebateVar, 'f', 2));
         memberQry.bindValue(":membershipNumber", memNumAsTxt);
 
@@ -641,7 +630,7 @@ void aSales::on_salesFileButton_clicked()
             qDebug()<<("Item name edit failed.");
 
         /********************************************************************
-         * UPDATE INVENTORY DB - ?????
+         * UPDATE INVENTORY DB
          *******************************************************************/
         // Locate itemName in Inventory database
         QSqlQuery inventoryQry;
