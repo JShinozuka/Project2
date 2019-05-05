@@ -7,6 +7,8 @@
 #include <QSqlQueryModel>
 #include <QSqlError>
 #include <QDebug>
+#include <QMessageBox>
+#include <QString>
 
 namespace Ui {
 class mDailySales;
@@ -21,6 +23,9 @@ public:
     ~mDailySales();
 
 private slots:
+
+    void displayDefaultDailySalesTable()const;
+
     void on_pushButton_clicked();
     //!< Prints the executive member sales report
     /*!< POST: Displays customer name, date, item purchase

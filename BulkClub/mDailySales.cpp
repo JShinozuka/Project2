@@ -6,7 +6,7 @@ mDailySales::mDailySales(QWidget *parent) :
     ui(new Ui::mDailySales)
 {
     ui->setupUi(this);
-    //displaySalesReport();
+    displayDefaultDailySalesTable();
 }
 
 mDailySales::~mDailySales()
@@ -14,6 +14,33 @@ mDailySales::~mDailySales()
     delete ui;
 }
 
+void mDailySales::displayDefaultDailySalesTable() const
+{
+    // Create query model
+    QSqlQueryModel *model = new QSqlQueryModel;
+
+    // Define query model
+    model->setQuery("SELECT SaleID, date, "
+                    "membershipNum, itemPurchased  "
+                    "salePrice, quantity "
+                    "FROM SalesDB "
+                    "ORDER BY year, month, day ");
+
+    // Display query error if exists
+    if(model->lastError().isValid())
+        qDebug() << model->lastError();
+
+    // Set Table Column Header Text
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Sales ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Membership Number"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Items purchased"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Sale price"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Quantity"));
+
+    // Display table with query model
+    ui->salesReportTableView->setModel(model);
+}
 /*****************************************************************
  * METHOD - on_pushButton_clicked
  * ---------------------------------------------------------------
@@ -32,8 +59,10 @@ void mDailySales::on_pushButton_clicked()
     year = ui->yearBox->currentText();
     month = ui->monthBox->currentText();
     day = ui->dateBox->currentText();
+    QString compareDate;
 
     QSqlQueryModel *model = new QSqlQueryModel;
+    QSqlQueryModel *dateComparison = new QSqlQueryModel();
 
     model->setQuery("SELECT MembershipDB.customerName, SalesDB.date, "
                     "SalesDB.itemPurchased, SalesDB.quantity "
@@ -114,7 +143,8 @@ void mDailySales::on_selectDateButton_clicked()
 
     //print the total revenue for the day
     while (totalRevenueCalc.next()) {
-    QString printRevenue = totalRevenueCalc.value(0).toString();
+    float floatprintRevenue = totalRevenueCalc.value(0).toFloat();
+    QString printRevenue = QString::number(floatprintRevenue, 'f', 2);
     ui->totalRevenue->setText(printRevenue);
     qDebug() << printRevenue;
     }
@@ -160,7 +190,8 @@ void mDailySales::on_selectDateButton_clicked()
  *****************************************************************/
 void mDailySales::on_viewAllMembersButton_clicked()
 {
-    //change to date edit later
+   displayDefaultDailySalesTable();
+   /* //change to date edit later
     year = ui->yearBox->currentText();
     month = ui->monthBox->currentText();
     day = ui->dateBox->currentText();
@@ -228,7 +259,7 @@ void mDailySales::on_viewAllMembersButton_clicked()
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Membership Type"));
 
     // Display table with query model
-    ui->salesReportTableView->setModel(model);
+    ui->salesReportTableView->setModel(model);*/
 }
 
 /*****************************************************************

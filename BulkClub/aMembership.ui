@@ -46,7 +46,7 @@
     <rect>
      <x>830</x>
      <y>50</y>
-     <width>301</width>
+     <width>321</width>
      <height>191</height>
     </rect>
    </property>
@@ -149,12 +149,12 @@
     </property>
     <item>
      <property name="text">
-      <string>Executive</string>
+      <string>Regular</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Regular</string>
+      <string>Executive</string>
      </property>
     </item>
    </widget>
@@ -166,6 +166,19 @@
       <width>121</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="dateTime">
+     <datetime>
+      <hour>0</hour>
+      <minute>0</minute>
+      <second>0</second>
+      <year>2019</year>
+      <month>1</month>
+      <day>1</day>
+     </datetime>
     </property>
    </widget>
    <widget class="QLineEdit" name="name">
@@ -181,9 +194,9 @@
    <widget class="QLineEdit" name="membershipNum">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>200</x>
       <y>60</y>
-      <width>121</width>
+      <width>91</width>
       <height>22</height>
      </rect>
     </property>
@@ -195,7 +208,7 @@
      <x>830</x>
      <y>260</y>
      <width>301</width>
-     <height>131</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="title">
@@ -245,17 +258,18 @@
    <widget class="QLabel" name="warningLabel">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>100</y>
-      <width>281</width>
-      <height>21</height>
+      <width>301</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: red;</string>
     </property>
     <property name="text">
-     <string>* WARNING: Deleting a member is permanent.</string>
+     <string>* WARNING: Deleting a member is
+   permanent.</string>
     </property>
    </widget>
   </widget>
