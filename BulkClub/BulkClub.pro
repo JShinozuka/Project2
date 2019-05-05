@@ -38,7 +38,8 @@ SOURCES += \
     aInventory.cpp \
     aConvertMembership.cpp \
     aSales.cpp \
-    aMembership.cpp
+    aMembership.cpp \
+    username.cpp
 
 
 HEADERS += \
@@ -54,7 +55,8 @@ HEADERS += \
     aInventory.h \
     aConvertMembership.h \
     aSales.h \
-    aMembership.h
+    aMembership.h \
+    username.h
 
 
 FORMS += \
