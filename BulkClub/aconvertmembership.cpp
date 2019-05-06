@@ -48,7 +48,7 @@ void aConvertMembership::displayUpGradeTable() const
     model->setQuery("SELECT customerName, membershipNumber, "
                     "rebateAmount "
                     "FROM MembershipDB "
-                    "WHERE rebateAmount >= 55 AND membershipType = 'Regular' "
+                    "WHERE (totalAmountSpent/1.0775)*.02 >=55 AND membershipType = 'Regular' "
                     "ORDER BY membershipNumber ASC");
 
     // Display query error if exists
